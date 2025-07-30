@@ -22,9 +22,20 @@
                 },
                 {
                     "name": "ImpassableDirections",
-                    "propertyType": "Direction",
+                    "propertyType": "Directions",
                     "type": "int",
                     "value": 0
+                },
+                {
+                    "name": "Jump",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "JumpDirection",
+                    "propertyType": "Direction",
+                    "type": "int",
+                    "value": 4
                 }
             ],
             "name": "BattleSdkTile",
@@ -36,8 +47,22 @@
             ]
         },
         {
-            "id": 2,
+            "id": 5,
             "name": "Direction",
+            "storageType": "int",
+            "type": "enum",
+            "values": [
+                "Down",
+                "Right",
+                "Up",
+                "Left",
+                "None"
+            ],
+            "valuesAsFlags": false
+        },
+        {
+            "id": 2,
+            "name": "Directions",
             "storageType": "int",
             "type": "enum",
             "values": [

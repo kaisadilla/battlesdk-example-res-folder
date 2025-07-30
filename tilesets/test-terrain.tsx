@@ -107,7 +107,7 @@
  </tile>
  <tile id="97" type="BattleSdkTile">
   <properties>
-   <property name="ImpassableDirections" type="int" propertytype="Direction" value="0"/>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="0"/>
   </properties>
  </tile>
  <tile id="98" type="BattleSdkTile">
@@ -122,7 +122,7 @@
  </tile>
  <tile id="100" type="BattleSdkTile">
   <properties>
-   <property name="ImpassableDirections" type="int" propertytype="Direction" value="0"/>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="0"/>
   </properties>
  </tile>
  <tile id="101" type="BattleSdkTile">
@@ -132,12 +132,12 @@
  </tile>
  <tile id="102" type="BattleSdkTile">
   <properties>
-   <property name="ImpassableDirections" type="int" propertytype="Direction" value="4"/>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="4"/>
   </properties>
  </tile>
  <tile id="103" type="BattleSdkTile">
   <properties>
-   <property name="ImpassableDirections" type="int" propertytype="Direction" value="4"/>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="4"/>
   </properties>
  </tile>
  <tile id="104" type="BattleSdkTile">
@@ -206,11 +206,31 @@
    <property name="Impassable" type="bool" value="true"/>
   </properties>
  </tile>
- <tile id="122" type="BattleSdkTile"/>
- <tile id="123" type="BattleSdkTile"/>
+ <tile id="122" type="BattleSdkTile">
+  <properties>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="11"/>
+   <property name="Jump" type="bool" value="true"/>
+   <property name="JumpDirection" type="int" propertytype="Direction" value="0"/>
+  </properties>
+ </tile>
+ <tile id="123" type="BattleSdkTile">
+  <properties>
+   <property name="Impassable" type="bool" value="true"/>
+  </properties>
+ </tile>
  <tile id="124" type="BattleSdkTile"/>
- <tile id="125" type="BattleSdkTile"/>
- <tile id="126" type="BattleSdkTile"/>
+ <tile id="125" type="BattleSdkTile">
+  <properties>
+   <property name="Impassable" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="126" type="BattleSdkTile">
+  <properties>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="11"/>
+   <property name="Jump" type="bool" value="true"/>
+   <property name="JumpDirection" type="int" propertytype="Direction" value="0"/>
+  </properties>
+ </tile>
  <tile id="127" type="BattleSdkTile">
   <properties>
    <property name="Impassable" type="bool" value="true"/>
@@ -218,11 +238,35 @@
  </tile>
  <tile id="128" type="BattleSdkTile"/>
  <tile id="129" type="BattleSdkTile"/>
- <tile id="130" type="BattleSdkTile"/>
- <tile id="131" type="BattleSdkTile"/>
+ <tile id="130" type="BattleSdkTile">
+  <properties>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="13"/>
+   <property name="Jump" type="bool" value="true"/>
+   <property name="JumpDirection" type="int" propertytype="Direction" value="3"/>
+  </properties>
+ </tile>
+ <tile id="131" type="BattleSdkTile">
+  <properties>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="13"/>
+   <property name="Jump" type="bool" value="true"/>
+   <property name="JumpDirection" type="int" propertytype="Direction" value="3"/>
+  </properties>
+ </tile>
  <tile id="132" type="BattleSdkTile"/>
- <tile id="133" type="BattleSdkTile"/>
- <tile id="134" type="BattleSdkTile"/>
+ <tile id="133" type="BattleSdkTile">
+  <properties>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="7"/>
+   <property name="Jump" type="bool" value="true"/>
+   <property name="JumpDirection" type="int" propertytype="Direction" value="1"/>
+  </properties>
+ </tile>
+ <tile id="134" type="BattleSdkTile">
+  <properties>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="7"/>
+   <property name="Jump" type="bool" value="true"/>
+   <property name="JumpDirection" type="int" propertytype="Direction" value="1"/>
+  </properties>
+ </tile>
  <tile id="135" type="BattleSdkTile">
   <properties>
    <property name="Impassable" type="bool" value="true"/>
@@ -230,11 +274,37 @@
  </tile>
  <tile id="136" type="BattleSdkTile"/>
  <tile id="137" type="BattleSdkTile"/>
- <tile id="138" type="BattleSdkTile"/>
- <tile id="139" type="BattleSdkTile"/>
- <tile id="140" type="BattleSdkTile"/>
- <tile id="141" type="BattleSdkTile"/>
- <tile id="142" type="BattleSdkTile"/>
+ <tile id="138" type="BattleSdkTile">
+  <properties>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="13"/>
+   <property name="Jump" type="bool" value="true"/>
+   <property name="JumpDirection" type="int" propertytype="Direction" value="3"/>
+  </properties>
+ </tile>
+ <tile id="139" type="BattleSdkTile">
+  <properties>
+   <property name="Impassable" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="140" type="BattleSdkTile">
+  <properties>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="11"/>
+   <property name="Jump" type="bool" value="true"/>
+   <property name="JumpDirection" type="int" propertytype="Direction" value="0"/>
+  </properties>
+ </tile>
+ <tile id="141" type="BattleSdkTile">
+  <properties>
+   <property name="Impassable" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="142" type="BattleSdkTile">
+  <properties>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="7"/>
+   <property name="Jump" type="bool" value="true"/>
+   <property name="JumpDirection" type="int" propertytype="Direction" value="1"/>
+  </properties>
+ </tile>
  <tile id="143" type="BattleSdkTile">
   <properties>
    <property name="Impassable" type="bool" value="true"/>
@@ -298,17 +368,17 @@
  <tile id="175" type="BattleSdkTile"/>
  <tile id="176" type="BattleSdkTile">
   <properties>
-   <property name="ImpassableDirections" type="int" propertytype="Direction" value="4"/>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="4"/>
   </properties>
  </tile>
  <tile id="177" type="BattleSdkTile">
   <properties>
-   <property name="ImpassableDirections" type="int" propertytype="Direction" value="4"/>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="4"/>
   </properties>
  </tile>
  <tile id="178" type="BattleSdkTile">
   <properties>
-   <property name="ImpassableDirections" type="int" propertytype="Direction" value="4"/>
+   <property name="ImpassableDirections" type="int" propertytype="Directions" value="4"/>
   </properties>
  </tile>
  <tile id="179" type="BattleSdkTile"/>
