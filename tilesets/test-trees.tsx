@@ -21,8 +21,16 @@
    <property name="Impassable" type="bool" value="true"/>
   </properties>
  </tile>
- <tile id="4" type="BattleSdkTile"/>
- <tile id="5" type="BattleSdkTile"/>
+ <tile id="4" type="BattleSdkTile">
+  <properties>
+   <property name="Impassable" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="5" type="BattleSdkTile">
+  <properties>
+   <property name="Impassable" type="bool" value="true"/>
+  </properties>
+ </tile>
  <tile id="6" type="BattleSdkTile">
   <properties>
    <property name="Impassable" type="bool" value="true"/>
@@ -97,9 +105,21 @@
  </tile>
  <tile id="22" type="BattleSdkTile"/>
  <tile id="23" type="BattleSdkTile"/>
- <tile id="24" type="BattleSdkTile"/>
- <tile id="25" type="BattleSdkTile"/>
- <tile id="26" type="BattleSdkTile"/>
+ <tile id="24" type="BattleSdkTile">
+  <properties>
+   <property name="Impassable" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="25" type="BattleSdkTile">
+  <properties>
+   <property name="Impassable" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="26" type="BattleSdkTile">
+  <properties>
+   <property name="Impassable" type="bool" value="true"/>
+  </properties>
+ </tile>
  <tile id="27" type="BattleSdkTile"/>
  <tile id="28" type="BattleSdkTile">
   <properties>
@@ -162,12 +182,20 @@
   </properties>
  </tile>
  <tile id="48" type="BattleSdkTile"/>
- <tile id="49" type="BattleSdkTile"/>
+ <tile id="49" type="BattleSdkTile">
+  <properties>
+   <property name="Impassable" type="bool" value="true"/>
+  </properties>
+ </tile>
  <tile id="50" type="BattleSdkTile"/>
  <tile id="51" type="BattleSdkTile"/>
  <tile id="52" type="BattleSdkTile"/>
  <tile id="53" type="BattleSdkTile"/>
- <tile id="54" type="BattleSdkTile"/>
+ <tile id="54" type="BattleSdkTile">
+  <properties>
+   <property name="Impassable" type="bool" value="true"/>
+  </properties>
+ </tile>
  <tile id="55" type="BattleSdkTile"/>
  <tile id="56" type="BattleSdkTile">
   <properties>
@@ -196,7 +224,11 @@
    <property name="Impassable" type="bool" value="true"/>
   </properties>
  </tile>
- <tile id="63" type="BattleSdkTile"/>
+ <tile id="63" type="BattleSdkTile">
+  <properties>
+   <property name="Impassable" type="bool" value="true"/>
+  </properties>
+ </tile>
  <tile id="64" type="BattleSdkTile">
   <properties>
    <property name="Impassable" type="bool" value="true"/>
@@ -213,7 +245,11 @@
   </properties>
  </tile>
  <tile id="67" type="BattleSdkTile"/>
- <tile id="68" type="BattleSdkTile"/>
+ <tile id="68" type="BattleSdkTile">
+  <properties>
+   <property name="Impassable" type="bool" value="true"/>
+  </properties>
+ </tile>
  <tile id="69" type="BattleSdkTile"/>
  <tile id="70" type="BattleSdkTile">
   <properties>
@@ -242,17 +278,17 @@
  </tile>
  <tile id="75" type="BattleSdkTile">
   <properties>
-   <property name="Impassable" type="bool" value="false"/>
+   <property name="Impassable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="76" type="BattleSdkTile">
   <properties>
-   <property name="Impassable" type="bool" value="false"/>
+   <property name="Impassable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="77" type="BattleSdkTile">
   <properties>
-   <property name="Impassable" type="bool" value="false"/>
+   <property name="Impassable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="78" type="BattleSdkTile"/>

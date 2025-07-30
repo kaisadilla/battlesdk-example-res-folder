@@ -1,2 +1,109 @@
+graphics/characters/agatha.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Kanto-Elite-Four-Agatha-700915884
+graphics/characters/archie.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Aqua-Boss-Archie-867127814
+graphics/characters/ash_greninja.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Ash-Greninja-738724279
+graphics/characters/ash_greninja_shiny.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Shiny-Ash-Greninja-738723118
+graphics/characters/bird_keeper_f.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Bird-Keeper-Female-853136565
+graphics/characters/bird_keeper_m.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Bird-Keeper-Male-853136787
+graphics/characters/brawly.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Hoenn-Gym-Leader-Brawly-696757253
+graphics/characters/breeder_f.png - PurpleZaffre & maicerochico / https://www.deviantart.com/purplezaffre/art/Commission-Female-Breeder-690856290
+graphics/characters/breeder_m.png - PurpleZaffre & maicerochico / https://www.deviantart.com/purplezaffre/art/Commission-Male-Breeder-690856994
+graphics/characters/brycen.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Gym-Leader-Brycen-713524721
+graphics/characters/burgh.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Gym-Leader-Burgh-713521453
+graphics/characters/cheren.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Gym-Leader-Cheren-713525856
+graphics/characters/chili.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Gym-Leader-Chili-713525541
+graphics/characters/cilan.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Gym-Leader-Cilan-713525663
+graphics/characters/colress.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Commission-Colress-Gen-7-Outfit-734822034
+graphics/characters/colress_gen7.png - PurpleZaffre & PizzaSun / https://www.deviantart.com/purplezaffre/art/Commission-Colress-Gen-7-Outfit-734822034
+graphics/characters/cress.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Gym-Leader-Cress-713525403
+graphics/characters/dragon_trainer.png - PurpleZaffre & maicerochico / https://www.deviantart.com/purplezaffre/art/Commission-Dragon-Tamer-677563206
 graphics/characters/drayden.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Gym-Leader-Drayden-776001267
+graphics/characters/faba.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Aether-Branch-Chief-Faba-879885588
+graphics/characters/flannery.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Hoenn-Gym-Leader-Flannery-696831752
+graphics/characters/ghetsis_bw.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Plasma-Boss-Ghetsis-BW-867128052
+graphics/characters/ghetsis_bw2.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Plasma-Boss-Ghetsis-700980316
+graphics/characters/ghetsis_bw2_staff.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Plasma-Boss-Ghetsis-With-Staff-700980561
+graphics/characters/giovanni.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Rocket-Boss-Giovanni-867127433
+graphics/characters/guzma.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Skull-Boss-Guzma-867128321
+graphics/characters/hilbert.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Protagonist-Hilbert-696354095
+graphics/characters/hugh.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Rival-Hugh-680331791
+graphics/characters/juan.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Hoenn-Gym-Leader-Juan-696746338
+graphics/characters/lenora.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Gym-Leader-Lenora-713524919
+graphics/characters/liza.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Hoenn-Gym-Leader-Liza-867985891
+graphics/characters/lorelei.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Kanto-Elite-Four-Lorelei-696831431
+graphics/characters/lysandre.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Flare-Boss-Lysandre-867128187
+graphics/characters/marlon.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Gym-Leader-Marlon-776002209
+graphics/characters/marlon_goggles.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Gym-Leader-Marlon-With-Goggles-776002097
+graphics/characters/marlon_goggles_swimming.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Gym-Leader-Marlon-Swimming-With-Goggles-776001507
+graphics/characters/marlon_swimming.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Gym-Leader-Marlon-Swimming-776002000
+graphics/characters/maxie.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Magma-Boss-Maxie-867127959
+graphics/characters/mr_fuji_gen_1.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Mr-Fuji-867437388
+graphics/characters/mr_briney.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Mr-Briney-848225528
+graphics/characters/n.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Plasma-King-N-677914448
+graphics/characters/nanu.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Island-Kahuna-Nanu-848225311
+graphics/characters/norman.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Hoenn-Gym-Leader-Norman-867985823
+graphics/characters/piers.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Yell-Boss-Piers-867437145
+graphics/characters/poke_kid.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Poke-Kid-853135847
+graphics/characters/private_investigator.png - PurpleZaffre & maicerochico / https://www.deviantart.com/purplezaffre/art/Commission-Private-Investigator-678184217
+graphics/characters/psychic_f.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Psychic-Female-867127038
+graphics/characters/roxanne.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Hoenn-Gym-Leader-Roxanne-867985665
+graphics/characters/steven_stone.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Mr-Stone-853135353
+graphics/characters/tate.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Hoenn-Gym-Leader-Tate-867985953
+graphics/characters/team_neo_plasma_grunt_f.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Neo-Plasma-Female-Grunt-700982348
+graphics/characters/team_neo_plasma_grunt_m.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Neo-Plasma-Male-Grunt-700982449
+graphics/characters/team_plasma_grunt_f.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Plasma-Female-Grunt-700980923
+graphics/characters/team_plasma_grunt_m.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Team-Plasma-Male-Grunt-700981178
+graphics/characters/ultima.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Ultima-867126405
+graphics/characters/veteran.png - PurpleZaffre & maicerochico / https://www.deviantart.com/purplezaffre/art/Commission-Veteran-680132064
+graphics/characters/wallace.png - PurpleZaffre & DevDuelist / https://www.deviantart.com/purplezaffre/art/Commission-Champion-Wallace-734700173
+graphics/characters/wattson.png - PurpleZaffre & DevDuelist / https://www.deviantart.com/purplezaffre/art/Commission-Gym-Leader-Wattson-734700541
 graphics/characters/winona.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Commission-Gym-Leader-Winona-734699064
+
+
+graphics/characters/ace_trainer_sm_f.png - DiegoWT & roguewind22 / https://www.deviantart.com/diegowt/art/Alola-Youngster-952836090
+graphics/characters/ace_trainer_sm_m.png - DiegoWT & roguewind22 / https://www.deviantart.com/diegowt/art/Alola-Male-Ace-Trainer-951446428
+graphics/characters/archie_oras.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/GEN-6-ORAS-Team-Aqua-Leader-Archie-1071601442
+graphics/characters/artist_sv.png - DiegoWT & Maicerochico / https://www.deviantart.com/diegowt/art/Paldea-Artist-1173613613
+graphics/characters/backpacker_sv.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Paldea-Backpacker-1072571257
+graphics/characters/backpacker_xy.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Kalos-Backpacker-968155894
+graphics/characters/breeder_2_f.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Kalos-Female-Breeder-1020341682
+graphics/characters/breeder_2_m.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Kalos-Male-Breeder-1020342498
+graphics/characters/dragon_tamer.png - DiegoWT & Maicerochico / https://www.deviantart.com/diegowt/art/Paldea-Dragon-Tamer-1173614456
+graphics/characters/furisode_girl_1.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Kalos-Furisode-Girl-1-1173612818
+graphics/characters/geeta.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Geeta-Paldea-Champion-1071601046
+graphics/characters/hau.png - DiegoWT & LoganPaul0 / https://www.deviantart.com/diegowt/art/Pokemon-Trainer-Hau-1020344952
+graphics/characters/hiker.png - DiegoWT & roguewind22 / https://www.deviantart.com/diegowt/art/Alola-Hiker-952836383
+graphics/characters/kabu.png - DiegoWT & Kabu / https://www.deviantart.com/diegowt/art/Galar-Gym-Leader-Kabu-1020344677
+graphics/characters/kahili.png - DiegoWT & Taka / https://www.deviantart.com/diegowt/art/Alola-Elite-Four-Kahili-973857974
+graphics/characters/lisia.png - DiegoWT & Thunder / https://www.deviantart.com/diegowt/art/Pokemon-Coordinator-Lisia-1173610532
+graphics/characters/lucy.png - DiegoWT & Hydreinite / https://www.deviantart.com/diegowt/art/Pike-Queen-Lucy-1075913013
+graphics/characters/lusamine.png - DiegoWT & Taka / https://www.deviantart.com/diegowt/art/Aether-President-Lusamine-973858330
+graphics/characters/marnie.png - DiegoWT & Taka / https://www.deviantart.com/diegowt/art/Pokemon-Trainer-Marnie-973858612
+graphics/characters/milo.png - DiegoWT & LoganPaul0 / https://www.deviantart.com/diegowt/art/Galar-Gym-Leader-Milo-965851519
+graphics/characters/model_ss.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Galar-Model-1071597836
+graphics/characters/nemona.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Pokemon-Trainer-Nemona-1071602794
+graphics/characters/nessa.png - DiegoWT & LoganPaul0 / https://www.deviantart.com/diegowt/art/Galar-Gym-Leader-Nessa-965851748
+graphics/characters/police_officer_sm.png - DiegoWT & LoganPaul0 / https://www.deviantart.com/diegowt/art/Alola-Police-Officer-928534245
+graphics/characters/punk_boy.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Alola-Punk-Boy-1020344294
+graphics/characters/punk_girl.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Alola-Punk-Girl-1020344494
+graphics/characters/ranger_f.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Kalos-Female-Ranger-1020343257
+graphics/characters/ranger_m.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Kalos-Male-Ranger-1020343031
+graphics/characters/rising_star_f.png - DiegoWT & roguewind22 / https://www.deviantart.com/diegowt/art/Alola-Female-Rising-Star-956996164
+graphics/characters/rising_star_m.png - DiegoWT & roguewind22 / https://www.deviantart.com/diegowt/art/Alola-Male-Rising-Star-956995969
+graphics/characters/ryme.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Paldea-Gym-Leader-Ryme-1071598679
+graphics/characters/sabrina.png - DiegoWT & Hydreinite / https://www.deviantart.com/diegowt/art/Kanto-Gym-Leader-Sabrina-1075913403
+graphics/characters/sada.png - DiegoWT & Hydreinite / https://www.deviantart.com/diegowt/art/Professor-Sada-1075913732
+graphics/characters/shelly_oras.png - DiegoWT & LoganPaul0 / https://www.deviantart.com/diegowt/art/GEN-6-ORAS-Team-Aqua-Admin-Shelly-928534781
+graphics/characters/sightseer_f.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Alola-Female-Sightseer-1173612374
+graphics/characters/swimmer_sm_f.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Alola-Female-Swimmer-1-1071600113
+graphics/characters/swimmer_xy_f.png - DiegoWT & Kyledove /https://www.deviantart.com/diegowt/art/Kalos-Female-Swimmer-1071599688
+graphics/characters/team_aqua_grunt_oras_f.png - LoganPaul0 / https://www.deviantart.com/diegowt/art/GEN6-ORAS-Team-Aqua-Grunt-F-928534598
+graphics/characters/team_skull_grunt_f.png - DiegoWT / https://www.deviantart.com/diegowt/art/Team-Skull-female-grunt-1020343907
+graphics/characters/team_skull_grunt_m.png - DiegoWT / https://www.deviantart.com/diegowt/art/Team-Skull-male-grunt-1020343427
+graphics/characters/team_yell_grunt_f.png - DiegoWT & Taka / https://www.deviantart.com/diegowt/art/Team-Yell-female-grunt-973858433
+graphics/characters/team_yell_grunt_m.png - DiegoWT & Taka / https://www.deviantart.com/diegowt/art/Team-Yell-male-grunt-973858536
+graphics/characters/turo.png - DiegoWT & Hydreinite / https://www.deviantart.com/diegowt/art/Professor-Turo-1075914122
+graphics/characters/veteran_f.png - DiegoWT & roguewind22 / https://www.deviantart.com/diegowt/art/Alola-Female-Veteran-976331564
+graphics/characters/veteran_m.png - DiegoWT & roguewind22 / https://www.deviantart.com/diegowt/art/Alola-Male-Veteran-976331348
+graphics/characters/waitress.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Kalos-Waitress-1020342742
+graphics/characters/wicke.png - DiegoWT & Taka / https://www.deviantart.com/diegowt/art/Aether-Assistant-Wicke-973858212
+graphics/characters/youngster_sm.png - DiegoWT & roguewind22 / https://www.deviantart.com/diegowt/art/Alola-Youngster-952836090
