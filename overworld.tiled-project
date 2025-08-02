@@ -11,6 +11,24 @@
     ],
     "propertyTypes": [
         {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 7,
+            "members": [
+                {
+                    "name": "BackgroundMusic",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
+            "name": "BattleSdkClass",
+            "type": "class",
+            "useAs": [
+                "property",
+                "map"
+            ]
+        },
+        {
             "color": "#ff19a447",
             "drawFill": true,
             "id": 1,

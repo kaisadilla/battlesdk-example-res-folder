@@ -1,0 +1,13 @@
+--move_up(8)
+--move_right(2)
+--move_up(3)
+--move_right(2)
+--move_up(4)
+--move_left(11)
+--move_down(3)
+--move_left(6)
+
+move_down()
+move_right(4)
+move_down()
+move_down()

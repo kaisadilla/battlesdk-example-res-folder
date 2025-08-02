@@ -5,8 +5,8 @@ graphics/characters/ash_greninja_shiny.png - PurpleZaffre / https://www.devianta
 graphics/characters/bird_keeper_f.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Bird-Keeper-Female-853136565
 graphics/characters/bird_keeper_m.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Bird-Keeper-Male-853136787
 graphics/characters/brawly.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Hoenn-Gym-Leader-Brawly-696757253
-graphics/characters/breeder_f.png - PurpleZaffre & maicerochico / https://www.deviantart.com/purplezaffre/art/Commission-Female-Breeder-690856290
-graphics/characters/breeder_m.png - PurpleZaffre & maicerochico / https://www.deviantart.com/purplezaffre/art/Commission-Male-Breeder-690856994
+graphics/characters/breeder_dp_f.png - PurpleZaffre & maicerochico / https://www.deviantart.com/purplezaffre/art/Commission-Female-Breeder-690856290
+graphics/characters/breeder_dp_m.png - PurpleZaffre & maicerochico / https://www.deviantart.com/purplezaffre/art/Commission-Male-Breeder-690856994
 graphics/characters/brycen.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Gym-Leader-Brycen-713524721
 graphics/characters/burgh.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Gym-Leader-Burgh-713521453
 graphics/characters/cheren.png - PurpleZaffre / https://www.deviantart.com/purplezaffre/art/Unova-Gym-Leader-Cheren-713525856
@@ -85,8 +85,8 @@ graphics/characters/nessa.png - DiegoWT & LoganPaul0 / https://www.deviantart.co
 graphics/characters/police_officer_sm.png - DiegoWT & LoganPaul0 / https://www.deviantart.com/diegowt/art/Alola-Police-Officer-928534245
 graphics/characters/punk_boy.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Alola-Punk-Boy-1020344294
 graphics/characters/punk_girl.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Alola-Punk-Girl-1020344494
-graphics/characters/ranger_f.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Kalos-Female-Ranger-1020343257
-graphics/characters/ranger_m.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Kalos-Male-Ranger-1020343031
+graphics/characters/ranger_xy_f.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Kalos-Female-Ranger-1020343257
+graphics/characters/ranger_xy_m.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Kalos-Male-Ranger-1020343031
 graphics/characters/rising_star_f.png - DiegoWT & roguewind22 / https://www.deviantart.com/diegowt/art/Alola-Female-Rising-Star-956996164
 graphics/characters/rising_star_m.png - DiegoWT & roguewind22 / https://www.deviantart.com/diegowt/art/Alola-Male-Rising-Star-956995969
 graphics/characters/ryme.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Paldea-Gym-Leader-Ryme-1071598679
@@ -104,6 +104,114 @@ graphics/characters/team_yell_grunt_m.png - DiegoWT & Taka / https://www.deviant
 graphics/characters/turo.png - DiegoWT & Hydreinite / https://www.deviantart.com/diegowt/art/Professor-Turo-1075914122
 graphics/characters/veteran_f.png - DiegoWT & roguewind22 / https://www.deviantart.com/diegowt/art/Alola-Female-Veteran-976331564
 graphics/characters/veteran_m.png - DiegoWT & roguewind22 / https://www.deviantart.com/diegowt/art/Alola-Male-Veteran-976331348
-graphics/characters/waitress.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Kalos-Waitress-1020342742
+graphics/characters/waitress_xy.png - DiegoWT & Kyledove / https://www.deviantart.com/diegowt/art/Kalos-Waitress-1020342742
 graphics/characters/wicke.png - DiegoWT & Taka / https://www.deviantart.com/diegowt/art/Aether-Assistant-Wicke-973858212
 graphics/characters/youngster_sm.png - DiegoWT & roguewind22 / https://www.deviantart.com/diegowt/art/Alola-Youngster-952836090
+
+graphics/characters/ace_trainer_bw_f.png - DiegoWT
+graphics/characters/ace_trainer_bw_m.png - DiegoWT
+graphics/characters/alder.png - DiegoWT
+graphics/characters/artist_bw.png - DiegoWT
+graphics/characters/backers_2_f.png - DiegoWT
+graphics/characters/backers_2_m.png - DiegoWT
+graphics/characters/backers_f.png - DiegoWT
+graphics/characters/backers_m.png - DiegoWT
+graphics/characters/backpacker_bw_f.png - DiegoWT
+graphics/characters/backpacker_bw_m.png - DiegoWT
+graphics/characters/baker.png - DiegoWT
+graphics/characters/battle_girl_bw.png - DiegoWT
+graphics/characters/beauty_bw.png - DiegoWT
+graphics/characters/benga.png - DiegoWT
+graphics/characters/bianca.png - DiegoWT
+graphics/characters/bianca_2.png - DiegoWT
+graphics/characters/biker_bw.png - DiegoWT
+graphics/characters/black_belt_bw.png - DiegoWT
+graphics/characters/breeder_bw_f.png - DiegoWT
+graphics/characters/breeder_bw_m.png - DiegoWT
+graphics/characters/burgh_2.png - DiegoWT
+graphics/characters/caitlin.png - DiegoWT
+graphics/characters/chili_2.png - DiegoWT
+graphics/characters/cilan_2.png - DiegoWT
+graphics/characters/clay.png - DiegoWT
+graphics/characters/clerk_bw_2_m.png - DiegoWT
+graphics/characters/clerk_bw_f.png - DiegoWT
+graphics/characters/clerk_bw_m.png - DiegoWT
+graphics/characters/cress_2.png - DiegoWT
+graphics/characters/cyclist_bw_f.png - DiegoWT
+graphics/characters/cyclist_bw_m.png - DiegoWT
+graphics/characters/dancer.png - DiegoWT
+graphics/characters/depot_agent.png - DiegoWT
+graphics/characters/doctor.png - DiegoWT
+graphics/characters/elesa.png - DiegoWT
+graphics/characters/elesa_bw2.png - DiegoWT
+graphics/characters/fisher_bw.png - DiegoWT
+graphics/characters/gentleman_bw.png - DiegoWT
+graphics/characters/getsis_4_bw.png - DiegoWT
+graphics/characters/ghetsis_2_bw.png - DiegoWT
+graphics/characters/ghetsis_3_bw.png - DiegoWT
+graphics/characters/grimsley.png - DiegoWT
+graphics/characters/guitarist.png - DiegoWT
+graphics/characters/harlequin.png - DiegoWT
+graphics/characters/hiker_bw.png - DiegoWT
+graphics/characters/hoopster.png - DiegoWT
+graphics/characters/infielder.png - DiegoWT
+graphics/characters/iris.png - DiegoWT
+graphics/characters/iris_bw2.png - DiegoWT
+graphics/characters/janitor.png - DiegoWT
+graphics/characters/lady_bw.png - DiegoWT
+graphics/characters/lass_bw.png - DiegoWT
+graphics/characters/lenora_2.png - DiegoWT
+graphics/characters/lenora_3.png - DiegoWT
+graphics/characters/linebacker.png - DiegoWT
+graphics/characters/main.png - DiegoWT
+graphics/characters/marlon_2.png - DiegoWT
+graphics/characters/marlon_2_swimming.png - DiegoWT
+graphics/characters/marshall.png - DiegoWT
+graphics/characters/musician.png - DiegoWT
+graphics/characters/nurse.png - DiegoWT
+graphics/characters/nursery_aid.png - DiegoWT
+graphics/characters/parasol_lady_bw.png - DiegoWT
+graphics/characters/pilot.png - DiegoWT
+graphics/characters/poke_fan_bw_2_m.png - DiegoWT
+graphics/characters/poke_fan_bw_f.png - DiegoWT
+graphics/characters/poke_fan_bw_m.png - DiegoWT
+graphics/characters/policeman_bw.png - DiegoWT
+graphics/characters/preschooler_bw_f.png - DiegoWT
+graphics/characters/preschooler_bw_m.png - DiegoWT
+graphics/characters/psychic_bw_f.png - DiegoWT
+graphics/characters/psychic_bw_m.png - DiegoWT
+graphics/characters/ranger_bw_f.png - DiegoWT
+graphics/characters/ranger_bw_m.png - DiegoWT
+graphics/characters/rich_boy_bw.png - DiegoWT
+graphics/characters/roughneck.png - DiegoWT
+graphics/characters/roxie.png - DiegoWT
+graphics/characters/roxie_2.png - DiegoWT
+graphics/characters/school_kid_f.png - DiegoWT
+graphics/characters/school_kid_m.png - DiegoWT
+graphics/characters/scientist_bw_f.png - DiegoWT
+graphics/characters/scientist_bw_m.png - DiegoWT
+graphics/characters/shauntal.png - DiegoWT
+graphics/characters/skyla.png - DiegoWT
+graphics/characters/smasher.png - DiegoWT
+graphics/characters/socialite.png - DiegoWT
+graphics/characters/striker.png - DiegoWT
+graphics/characters/subway_boss.png - DiegoWT
+graphics/characters/subway_boss_2.png - DiegoWT
+graphics/characters/swimmer_bw_f.png - DiegoWT
+graphics/characters/swimmer_bw_m.png - DiegoWT
+graphics/characters/team_plasma_seven_sage_1.png - DiegoWT
+graphics/characters/team_plasma_seven_sage_2.png - DiegoWT
+graphics/characters/team_plasma_seven_sage_3.png - DiegoWT
+graphics/characters/team_plasma_seven_sage_4.png - DiegoWT
+graphics/characters/team_plasma_seven_sage_4_2.png - DiegoWT
+graphics/characters/team_plasma_seven_sage_5.png - DiegoWT
+graphics/characters/team_plasma_seven_sage_6.png - DiegoWT
+graphics/characters/team_plasma_shadow.png - DiegoWT
+graphics/characters/twins_bw.png - DiegoWT
+graphics/characters/veteran_bw_f.png - DiegoWT
+graphics/characters/veteran_bw_m.png - DiegoWT
+graphics/characters/waiter.png - DiegoWT
+graphics/characters/waitress_bw.png - DiegoWT
+graphics/characters/worker_bw.png - DiegoWT
+graphics/characters/worker_bw_2.png - DiegoWT
+graphics/characters/youngster_bw.png - DiegoWT
