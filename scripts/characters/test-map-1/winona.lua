@@ -1,13 +1,9 @@
---move_up(8)
---move_right(2)
---move_up(3)
---move_right(2)
---move_up(4)
---move_left(11)
---move_down(3)
---move_left(6)
-
-move_down()
-move_right(4)
-move_down()
-move_down()
+target:move_down(2)
+target:move_left()
+message(
+    "When I was a kid, all of this was black empty tiles. " ..
+    "Now there's trees and stuff. There's also textboxes, " ..
+    "which we need to fill right now with as many words as we can. " ..
+    "This text is even longer, as we now have to check transitions across " ..
+    "several lines.\n...\nAnd yes, this is being called from Lua."
+)
