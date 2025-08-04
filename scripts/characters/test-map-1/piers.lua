@@ -1,0 +1,6 @@
+message("characters.test-map-1.piers")
+target:move_left(1)
+target:move_up(6)
+player:move_up(6)
+target:move_up(9)
+player:move_up(9)

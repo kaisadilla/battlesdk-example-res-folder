@@ -1,0 +1,45 @@
+[
+    {
+        "type": "npc",
+        "sprite": "winona",
+        "position": [8, 2],
+        "interaction": {
+            "type": "script",
+            "script": "characters/test-map-1/winona"
+        },
+        "movement": {
+            "type": "route",
+            "route": [
+                "stepDown",
+                "stepRight",
+                "stepRight",
+                "stepDown",
+                "stepLeft",
+                "stepLeft",
+                "stepUp",
+                "stepUp",
+                "stepUp"
+            ]
+        }
+    },
+    {
+        "type": "npc",
+        "sprite": "piers",
+        "position": [9, 6],
+        "movement": {
+            "type": "random"
+        },
+        "interaction": {
+            "type": "script",
+            "script": "characters/test-map-1/piers"
+        }
+    },
+    {
+        "type": "npc",
+        "sprite": "sabrina",
+        "position": [14, 11],
+        "movement": {
+            "type": "lookAround"
+        }
+    }
+]

@@ -1,0 +1,13 @@
+local_name = "English (United States)"
+english_name = "English (United States)"
+author = "Kaisadilla"
+version = "1.0"
+
+menu.pokedex = "Pokédex"
+menu.pokemon = "Pokémon"
+menu.bag = "Bag"
+menu.player = "$player"
+menu.save = "Save"
+menu.options = "Options"
+menu.debug = "Debug"
+menu.exit = "Exit"
