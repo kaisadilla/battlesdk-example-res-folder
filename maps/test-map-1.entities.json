@@ -40,6 +40,10 @@
         "position": [14, 11],
         "movement": {
             "type": "lookAround"
+        },
+        "interaction": {
+            "type": "message",
+            "textKey": "characters.test-map-1.sabrina"
         }
     }
 ]
