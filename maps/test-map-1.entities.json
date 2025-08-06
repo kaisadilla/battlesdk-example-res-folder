@@ -1,7 +1,7 @@
 [
     {
         "type": "npc",
-        "sprite": "winona",
+        "sprite": "characters/winona",
         "position": [8, 2],
         "interaction": {
             "type": "script",
@@ -24,7 +24,7 @@
     },
     {
         "type": "npc",
-        "sprite": "piers",
+        "sprite": "characters/piers",
         "position": [9, 6],
         "movement": {
             "type": "random"
@@ -36,7 +36,7 @@
     },
     {
         "type": "npc",
-        "sprite": "sabrina",
+        "sprite": "characters/sabrina",
         "position": [14, 11],
         "movement": {
             "type": "lookAround"

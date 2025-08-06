@@ -215,3 +215,5 @@ graphics/characters/waitress_bw.png - DiegoWT
 graphics/characters/worker_bw.png - DiegoWT
 graphics/characters/worker_bw_2.png - DiegoWT
 graphics/characters/youngster_bw.png - DiegoWT
+
+graphics/ui/menu_icons.png - spaceemotion https://www.spriters-resource.com/fullview/25668/

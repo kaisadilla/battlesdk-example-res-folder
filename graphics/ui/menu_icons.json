@@ -1,0 +1,45 @@
+{
+    "type": "spritesheet",
+    "sprite_size": [24, 24],
+    "names": [
+        "pokedex",
+        "pokedex_gray",
+        "pokemon",
+        "pokemon_gray",
+        "bag_m",
+        "bag_m_gray",
+
+        "bag_f",
+        "bag_f_gray",
+        "player",
+        "player_gray",
+        "save",
+        "save_gray",
+
+        "options",
+        "options_gray",
+        "exit",
+        "exit_gray",
+        "communication",
+        "communication_gray",
+
+        "surrender",
+        "surrender_gray",
+        "underground_traps",
+        "underground_traps_gray",
+        "underground_spheres",
+        "underground_spheres_gray",
+
+        "underground_goods", 
+        "underground_goods_gray",
+        "underground_treasures",
+        "underground_treasures_gray",
+        "underground_player",
+        "underground_player_gray",
+
+        "underground_go_up",
+        "underground_go_up_gray",
+        "underground_exit",
+        "underground_exit_gray"
+    ]
+}

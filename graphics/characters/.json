@@ -1,0 +1,7 @@
+{
+    "type": "character",
+    "sprite_size": [32, 32],
+    "sheets": [
+        "walk"
+    ]
+}
