@@ -45,5 +45,14 @@
             "type": "message",
             "textKey": "characters.test-map-1.sabrina"
         }
+    },
+    {
+        "type": "npc",
+        "sprite": "characters/getsis_4_bw",
+        "position": [5, 3],
+        "interaction": {
+            "type": "message",
+            "textKey": "characters.test-map-1.getsis"
+        }
     }
 ]
