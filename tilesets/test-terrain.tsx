@@ -10,7 +10,12 @@
  <tile id="3" type="BattleSdkTile"/>
  <tile id="4" type="BattleSdkTile"/>
  <tile id="5" type="BattleSdkTile"/>
- <tile id="6" type="BattleSdkTile"/>
+ <tile id="6" type="BattleSdkTile">
+  <properties>
+   <property name="OnStepOverTile" type="int" value="180"/>
+   <property name="OnStepUnderTile" type="int" value="179"/>
+  </properties>
+ </tile>
  <tile id="7" type="BattleSdkTile"/>
  <tile id="8" type="BattleSdkTile"/>
  <tile id="9" type="BattleSdkTile"/>
@@ -382,7 +387,17 @@
   </properties>
  </tile>
  <tile id="179" type="BattleSdkTile"/>
- <tile id="180" type="BattleSdkTile"/>
+ <tile id="180" type="BattleSdkTile">
+  <properties>
+   <property name="LoopAnim" type="bool" value="false"/>
+  </properties>
+  <animation>
+   <frame tileid="180" duration="200"/>
+   <frame tileid="181" duration="200"/>
+   <frame tileid="182" duration="200"/>
+   <frame tileid="183" duration="200"/>
+  </animation>
+ </tile>
  <tile id="181" type="BattleSdkTile"/>
  <tile id="182" type="BattleSdkTile"/>
  <tile id="183" type="BattleSdkTile"/>

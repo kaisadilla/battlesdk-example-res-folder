@@ -2,7 +2,7 @@
     "maps": [
         {
             "fileName": "../maps/test-map-1.tmx",
-            "height": 320,
+            "height": 480,
             "width": 480,
             "x": 0,
             "y": 0

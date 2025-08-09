@@ -52,7 +52,7 @@ local menu_selection_frame = renderer:get_sprite('ui/menu_selection')
 local menu_pos = Vec2.new(renderer.width - 102, 2)
 local menu_size = Vec2.new(
     100,
-    (#options * OPTION_HEIGHT) + menu_padding.top + menu_padding.bottom + 2
+    (#options * OPTION_HEIGHT) + menu_padding.top + menu_padding.bottom
 )
 
 if menu_frame == nil then
@@ -110,7 +110,7 @@ end
 function draw_option (i)
     local opt = options[i]
 
-    local offset = Vec2.new(7, 6 + (OPTION_HEIGHT * (i - 1)))
+    local offset = Vec2.new(7, 5 + (OPTION_HEIGHT * (i - 1)))
 
     if i == cursor then
         opt.icon.draw(menu_pos + offset)
@@ -118,13 +118,13 @@ function draw_option (i)
         opt.inactive_icon.draw(menu_pos + offset)
     end
 
-    opt.name.draw(menu_pos + offset + Vec2.new(24 + 2, 0 + 8))
+    opt.name.draw(menu_pos + offset + Vec2.new(24 + 2, 0 + 7))
 end
 
 function draw_selection_frame ()
     local offset = Vec2.new(
         menu_padding.left - 1,
-        menu_padding.top + (OPTION_HEIGHT * (cursor - 1))
+        menu_padding.top + (OPTION_HEIGHT * (cursor - 1)) - 1
     )
     local size = Vec2.new(
         (menu_padding.right - menu_padding.left) + 2,

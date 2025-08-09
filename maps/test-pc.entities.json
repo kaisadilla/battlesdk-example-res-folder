@@ -1,0 +1,26 @@
+[
+    {
+        "type": "warp",
+        "name": "main_door",
+        "position": [8, 10],
+        "warp_type": "hall",
+        "entry_sound": "hall_exit",
+        "target_map": "test-map-1",
+        "target_entity": "pc_door"
+    },
+    {
+        "type": "npc",
+        "sprite": "characters/nessa",
+        "position": [4, 5],
+        "movement": {
+            "type": "lookAround"
+        },
+        "interaction": {
+            "type": "message",
+            "textKeys": [
+                "characters.test-pc.nessa.1",
+                "characters.test-pc.nessa.2"
+            ]
+        }
+    }
+]

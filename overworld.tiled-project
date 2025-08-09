@@ -21,7 +21,7 @@
                     "value": ""
                 }
             ],
-            "name": "BattleSdkClass",
+            "name": "BattleSdkMap",
             "type": "class",
             "useAs": [
                 "property",
@@ -54,6 +54,21 @@
                     "propertyType": "Direction",
                     "type": "int",
                     "value": 4
+                },
+                {
+                    "name": "LoopAnim",
+                    "type": "bool",
+                    "value": true
+                },
+                {
+                    "name": "OnStepOverTile",
+                    "type": "int",
+                    "value": 0
+                },
+                {
+                    "name": "OnStepUnderTile",
+                    "type": "int",
+                    "value": 0
                 }
             ],
             "name": "BattleSdkTile",

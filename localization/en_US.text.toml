@@ -5,3 +5,7 @@ sabrina = "I don't need a script at all to say this."
 winona.1 = "Wow, we can speak, but there's a pandemic so you'll have to respect our distance."
 winona.2 = "Get ready, I'm about to tell you a very long paragraph."
 winona.3 = "When I was a kid, all of this was black empty tiles. Now there's trees and stuff. There's also textboxes, which we need to fill right now with as many words as we can. This text is even longer, as we now have to check transitions across several lines.\n...\nAnd yes, this is being called from Lua and translated to English."
+
+[characters.test-pc]
+nessa.1 = "I'm seeking asylum from Galar's unnecessary dynamax mechanic."
+nessa.2 = "I tried moving into Paldea, only to find out my Pokémon get a chandelier on their head there."

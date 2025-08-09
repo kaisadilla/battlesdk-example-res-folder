@@ -1,5 +1,16 @@
 [
     {
+        "type": "warp",
+        "name": "pc_door",
+        "sprite": "doors/pokemon_center",
+        "position": [13, 15],
+        "warp_type": "door",
+        "entry_sound": "door_sliding",
+        "target_map": "test-pc",
+        "target_entity": "main_door",
+        "target_position": [8, 9]
+    },
+    {
         "type": "npc",
         "sprite": "characters/winona",
         "position": [8, 2],
@@ -37,7 +48,7 @@
     {
         "type": "npc",
         "sprite": "characters/sabrina",
-        "position": [14, 11],
+        "position": [14, 10],
         "movement": {
             "type": "lookAround"
         },
@@ -49,7 +60,7 @@
     {
         "type": "npc",
         "sprite": "characters/getsis_4_bw",
-        "position": [5, 3],
+        "position": [14, 5],
         "interaction": {
             "type": "message",
             "textKey": "characters.test-map-1.getsis"

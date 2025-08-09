@@ -227,4 +227,3 @@ function Vec2.op__multiply (mult, vec) end
 ---@return Vec2
 function Vec2.op__multiply (vec, mult) end
 -- #endregion Vec2
-
