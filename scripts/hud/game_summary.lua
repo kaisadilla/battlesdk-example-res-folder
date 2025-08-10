@@ -12,22 +12,23 @@ local frame_pos = Vec2.new(2, 2)
 local frame_size = Vec2.new(124, frame.padding.top + 4 + frame.padding.bottom + line_height * 5)
 
 
-local txt_city = font:render_plain_text_shadowed("Letepa Town")
+local txt_city = font:render_plain_text_shadowed("Letepa Town") -- TODO: Localize
 local txt_player = font:render_plain_text_shadowed("Player")
 local txt_badges = font:render_plain_text_shadowed("Badges")
 local txt_pokedex = font:render_plain_text_shadowed("Pokédex")
 local txt_time = font:render_plain_text_shadowed("Time")
 
 local txt_player_val = font:render_plain_text_shadowed(loc("{player}"))
-local txt_badges_val = font:render_plain_text_shadowed("0")
+local txt_badges_val = font:render_plain_text_shadowed(0)
 local txt_pokedex_val = font:render_plain_text_shadowed("42")
-local txt_time_val = font:render_plain_text_shadowed("0:57")
+local txt_time_val = font:render_plain_text_shadowed(
+    Fmt.time_span_as_hh_mm(G.time_played)
+)
 
-local txt_city_width = txt_city.width
-local txt_city_x = (frame_size.x - txt_city_width) / 2
+local txt_city_x = (frame_size.x - txt_city.width) / 2
 
 txt_city.set_color(Color.new(49, 82, 206, 255))
-txt_city.set_shadow_color(Color.new(49, 82, 206, 48))
+txt_city.set_shadow_color(Color.new(49, 82, 206, 74))
 
 function target:open ()
 

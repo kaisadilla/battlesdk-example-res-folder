@@ -35,4 +35,4 @@ tile_size = 16
 # in the range of 0 to 255).
 default_text_color = [85, 85, 93, 255]
 # The normal color of text's shadow, in RGBA format.
-default_shadow_color = [0, 0, 0, 48]
+default_shadow_color = [85, 85, 93, 74]

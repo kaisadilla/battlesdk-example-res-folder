@@ -103,7 +103,10 @@ function target:handle_input ()
         end
     end
     if Controls.get_key_down(ActionKey.primary) then
-        if options[cursor].id == "save" then
+        if options[cursor].id == "bag" then
+            Audio.play_beep_short()
+            Screen.open_bag()
+        elseif options[cursor].id == "save" then
             Audio.play_beep_short()
             target.close()
             Screen.open_save_game()
