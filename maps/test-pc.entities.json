@@ -13,7 +13,7 @@
         "sprite": "characters/nessa",
         "position": [4, 5],
         "movement": {
-            "type": "lookAround"
+            "type": "look_around"
         },
         "interaction": {
             "type": "message",

@@ -1,0 +1,22 @@
+[
+    {
+        "type": "npc",
+        "sprite": "characters/biker_bw",
+        "position": [8, 8],
+        "interaction": {
+            "type": "script",
+            "script": "characters/test-map-2/biker"
+        },
+        "movement": {
+            "type": "route",
+            "route": [
+                "stepDown",
+                "stepDown",
+                "stepDown",
+                "stepUp",
+                "stepUp",
+                "stepUp"
+            ]
+        }
+    }
+]

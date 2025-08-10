@@ -1,10 +1,27 @@
 [characters.test-map-1]
-getsis = "Don't get your hopes up! I've abandoned dozens of projects before! What's one more?"
-piers = "Let me help you ^^."
-sabrina = "I don't need a script at all to say this."
+brawly.msg = "I love Fighing-type Pokémon. I think they are the bestest Pokémon out there. What's your opinion on the matter?"
+brawly.choices.1 = "I love them, they are fantastic!"
+brawly.choices.2 = "They are cool."
+brawly.choices.3 = "Meh."
+brawly.choices.4 = "My least favourite type, actually."
+brawly.choices.5 = "ALAKAZAM! Use PSYCHIC!"
+brawly.answers.1 = "Don't you dare! I'm the biggest Fighting-type lover!"
+brawly.answers.2 = "Of course they are."
+brawly.answers.3 = "What do you mean meh? MACHAMP use SUPERPOWER!"
+brawly.answers.4 = "Well my least favorite type is you."
+brawly.answers.5 = "Oh no my Machamp..."
+brawly.answers.cancel = "Dude answer my question..."
+ghetsis = "Don't get your hopes up! I've abandoned dozens of projects before! What's one more?"
+piers = "This line of text will be...\nlong enough to take 3 lines.\nThis is so you can test scrolling!"
+sabrina = "I don't need a script at all to say this, dear {player}. Oh, I see you have ${money} in the bank."
 winona.1 = "Wow, we can speak, but there's a pandemic so you'll have to respect our distance."
 winona.2 = "Get ready, I'm about to tell you a very long paragraph."
 winona.3 = "When I was a kid, all of this was black empty tiles. Now there's trees and stuff. There's also textboxes, which we need to fill right now with as many words as we can. This text is even longer, as we now have to check transitions across several lines.\n...\nAnd yes, this is being called from Lua and translated to English."
+
+[characters.test-map-2]
+biker.msg_steal = "Hey, ${money} is too much for a kid, give me your money!"
+biker.msg_pity = "Haha, you only have ${money}? Work hard like I did to earn this fortune."
+biker.lose_money = "{player} lost $300!"
 
 [characters.test-pc]
 nessa.1 = "I'm seeking asylum from Galar's unnecessary dynamax mechanic."

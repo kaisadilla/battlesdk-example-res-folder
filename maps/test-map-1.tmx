@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" class="BattleSdkClass" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="16" nextobjectid="25">
+<map version="1.10" tiledversion="1.11.2" class="BattleSdkMap" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="16" nextobjectid="25">
  <editorsettings>
   <export target="test-map-1.json" format="json"/>
  </editorsettings>
  <properties>
   <property name="BackgroundMusic" value="lgpe_pallet_town"/>
+  <property name="DisplayName" value="names.maps.test-map-1"/>
  </properties>
  <tileset firstgid="1" source="../tilesets/test-terrain.tsx"/>
  <tileset firstgid="201" source="../tilesets/test-trees.tsx"/>

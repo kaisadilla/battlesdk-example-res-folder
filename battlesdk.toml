@@ -1,0 +1,38 @@
+[window]
+# The default resolution of the window. A scale of 1 will result in each pixel
+# in the viewport being the size of one pixel in the screen. A scale of 3 will
+# result in each pixel in the viewport being the size of 3 pixels in the screen.
+# The game may expose a setting for the player to override this value to their
+# liking.
+renderer_scale = 3.0
+# The width of the viewport, in pixels. This is NOT the size of the window.
+# Instead, the size of the window will be the size of the viewport * scale.
+viewport.width = 352
+# The height of the viewport, in pixels.
+viewport.height = 240
+
+[characters]
+# The speed (in tiles per second) of a character when it's walking.
+speed.walk = 3.33333333
+# The speed of a character when it's running.
+speed.run = 6.66666667
+# The speed of a character when it's jumping a ledge.
+speed.ledge_jump = 1.875
+
+[player]
+# The minimum amount of money the player may have. This value can be negative.
+money.min = 0
+# The maximum amount of money the player may have.
+money.max = 999_999_999
+
+[map]
+# The size of one tile in maps. This value cannot be overriden by any map setting,
+# as every map in BattleSDK must have the same tile size.
+tile_size = 16
+
+[ui]
+# The normal color of text, in RGBA format (R, G, B, A channels with values
+# in the range of 0 to 255).
+default_text_color = [85, 85, 93, 255]
+# The normal color of text's shadow, in RGBA format.
+default_shadow_color = [0, 0, 0, 48]

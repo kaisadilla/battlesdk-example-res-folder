@@ -1,5 +1,7 @@
 {
-    "displayName": "Power Green",
+    "display_name": "Power Green",
     "size": 12,
-    "lineHeight": 16
+    "line_height": 16,
+    "native_line_offset": 4,
+    "line_offset": 2
 }

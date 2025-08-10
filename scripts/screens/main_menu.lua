@@ -7,38 +7,45 @@ local options = {}
 
 if G.dex_unlocked then
     table.insert(options, {
-        name = font:render_plain_text_shadowed("Pokédex"),
+        id = "pokedex",
+        name = font:render_plain_text_shadowed(loc("menu.pokedex")),
         icon = renderer:get_sprite('ui/menu_icons/pokedex'),
         inactive_icon = renderer:get_sprite('ui/menu_icons/pokedex_gray'),
     })
 end
 table.insert(options, {
-    name = font:render_plain_text_shadowed("Pokémon"),
+    id = "pokemon",
+    name = font:render_plain_text_shadowed(loc("menu.pokemon")),
     icon = renderer:get_sprite('ui/menu_icons/pokemon'),
     inactive_icon = renderer:get_sprite('ui/menu_icons/pokemon_gray'),
 })
 table.insert(options, {
-    name = font:render_plain_text_shadowed("Bag"),
+    id = "bag",
+    name = font:render_plain_text_shadowed(loc("menu.bag")),
     icon = renderer:get_sprite('ui/menu_icons/bag_f'),
     inactive_icon = renderer:get_sprite('ui/menu_icons/bag_f_gray'),
 })
 table.insert(options, {
-    name = font:render_plain_text_shadowed("$player"),
+    id = "player",
+    name = font:render_plain_text_shadowed(loc("menu.player")),
     icon = renderer:get_sprite('ui/menu_icons/player'),
     inactive_icon = renderer:get_sprite('ui/menu_icons/player_gray'),
 })
 table.insert(options, {
-    name = font:render_plain_text_shadowed("Save"),
+    id = "save",
+    name = font:render_plain_text_shadowed(loc("menu.save")),
     icon = renderer:get_sprite('ui/menu_icons/save'),
     inactive_icon = renderer:get_sprite('ui/menu_icons/save_gray'),
 })
 table.insert(options, {
-    name = font:render_plain_text_shadowed("Options"),
+    id = "options",
+    name = font:render_plain_text_shadowed(loc("menu.options")),
     icon = renderer:get_sprite('ui/menu_icons/options'),
     inactive_icon = renderer:get_sprite('ui/menu_icons/options_gray'),
 })
 table.insert(options, {
-    name = font:render_plain_text_shadowed("Exit"),
+    id = "exit",
+    name = font:render_plain_text_shadowed(loc("menu.exit")),
     icon = renderer:get_sprite('ui/menu_icons/exit'),
     inactive_icon = renderer:get_sprite('ui/menu_icons/exit_gray'),
 })
@@ -61,11 +68,11 @@ end
 
 Logger.info("Loaded main menu!")
 
-function Screen:open ()
+function target:open ()
     Audio.play("menu_open")
 end
 
-function Screen:draw ()
+function target:draw ()
     if menu_frame == nil then return end
 
     menu_frame.draw(menu_pos, menu_size)
@@ -77,8 +84,8 @@ function Screen:draw ()
     draw_selection_frame()
 end
 
-function Screen:handle_input ()
-    if Controls:get_key_down(ActionKey.up) then
+function target:handle_input ()
+    if Controls.get_key_down(ActionKey.up) then
         Audio.play_beep_short()
 
         if cursor > 1 then
@@ -86,7 +93,7 @@ function Screen:handle_input ()
         else
             cursor = #options
         end
-    elseif Controls:get_key_down(ActionKey.down) then
+    elseif Controls.get_key_down(ActionKey.down) then
         Audio.play_beep_short()
 
         if cursor < #options then
@@ -95,15 +102,22 @@ function Screen:handle_input ()
             cursor = 1
         end
     end
-    if Controls:get_key_down(ActionKey.primary) then
-        -- TODO: Do whichever option is selected.
+    if Controls.get_key_down(ActionKey.primary) then
+        if options[cursor].id == "save" then
+            Audio.play_beep_short()
+            target.close()
+            Screen.open_save_game()
+        elseif options[cursor].id == "exit" then
+            Audio.play_beep_short()
+            target.close()
+        end
     end
     if
         Controls.get_key_down(ActionKey.secondary)
         or Controls.get_key_down(ActionKey.menu)
     then
         Audio.play_beep_short()
-        Screen:close()
+        target.close()
     end
 end
 
@@ -118,7 +132,7 @@ function draw_option (i)
         opt.inactive_icon.draw(menu_pos + offset)
     end
 
-    opt.name.draw(menu_pos + offset + Vec2.new(24 + 2, 0 + 7))
+    opt.name.draw(menu_pos + offset + Vec2.new(24 + 2, 0 + 5))
 end
 
 function draw_selection_frame ()

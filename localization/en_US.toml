@@ -3,11 +3,17 @@ english_name = "English (United States)"
 author = "Kaisadilla"
 version = "1.0"
 
+yes = "Yes"
+no = "No"
+
 menu.pokedex = "Pokédex"
 menu.pokemon = "Pokémon"
 menu.bag = "Bag"
-menu.player = "$player"
+menu.player = "{player}"
 menu.save = "Save"
 menu.options = "Options"
 menu.debug = "Debug"
 menu.exit = "Exit"
+
+screens.save.text.1 = "Would you like to save the game? This will replace the current save for this game."
+screens.save.text.2 = "{player} saved the game."

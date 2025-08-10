@@ -19,6 +19,11 @@
                     "name": "BackgroundMusic",
                     "type": "string",
                     "value": ""
+                },
+                {
+                    "name": "DisplayName",
+                    "type": "string",
+                    "value": ""
                 }
             ],
             "name": "BattleSdkMap",

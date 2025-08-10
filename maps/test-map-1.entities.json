@@ -20,6 +20,7 @@
         },
         "movement": {
             "type": "route",
+            "ignore_entities": true,
             "route": [
                 "stepDown",
                 "stepRight",
@@ -50,7 +51,7 @@
         "sprite": "characters/sabrina",
         "position": [14, 10],
         "movement": {
-            "type": "lookAround"
+            "type": "look_around"
         },
         "interaction": {
             "type": "message",
@@ -59,11 +60,23 @@
     },
     {
         "type": "npc",
-        "sprite": "characters/getsis_4_bw",
+        "sprite": "characters/ghetsis_4_bw",
         "position": [14, 5],
         "interaction": {
             "type": "message",
-            "textKey": "characters.test-map-1.getsis"
+            "textKey": "characters.test-map-1.ghetsis"
+        }
+    },
+    {
+        "type": "npc",
+        "sprite": "characters/brawly",
+        "position": [16, 15],
+        "movement": {
+            "type": "random"
+        },
+        "interaction": {
+            "type": "script",
+            "script": "characters/test-map-1/brawly"
         }
     }
 ]

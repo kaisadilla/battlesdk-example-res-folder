@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" class="BattleSdkClass" orientation="orthogonal" renderorder="right-down" width="17" height="12" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="1">
+<map version="1.10" tiledversion="1.11.2" class="BattleSdkMap" orientation="orthogonal" renderorder="right-down" width="17" height="12" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="1">
  <properties>
   <property name="BackgroundMusic" value="lgpe_pokemon_center"/>
+  <property name="DisplayName" value="names.maps.test-pc"/>
  </properties>
  <tileset firstgid="1" source="../tilesets/pokemon_center.tsx"/>
  <tileset firstgid="321" source="../tilesets/z_indices.tsx"/>

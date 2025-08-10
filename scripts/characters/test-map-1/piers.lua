@@ -1,10 +1,1 @@
-Hud:message("I no longer help with waiting.")
-local res = Hud:message("But This will wait.")
-Logger.info(res)
-
---message("characters.test-map-1.piers")
---target:move_left(1)
---target:move_up(6)
---player:move_up(6)
---target:move_up(9)
---player:move_up(9)
+Hud:message("characters.test-map-1.piers")
