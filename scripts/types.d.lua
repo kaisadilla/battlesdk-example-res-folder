@@ -91,13 +91,36 @@ function Entity.ignore_characters (val) end
 function Entity.to_string () end
 -- #endregion Entity
 
+-- #region Fmt
+---@class Fmt
+Fmt = {}
+
+---Formats time as HH:mm.
+---@param time number An amount of time, in seconds.
+---@return string
+function Fmt.time_span_as_hh_mm (time) end
+
+---Formats time as X d X h X m, ignoring any part that is 0 (e.g. 0 days,
+---12 hours, 15 minutes becomes "12 h 15 m").
+---@param time number 
+---@return string
+function Fmt.time_span_as_h_m (time) end
+
+---@return string
+function Fmt.to_string () end
+-- #endregion Fmt
+
 -- #region Font
 ---@class Font
 ---@field line_height number -- The height of one line in this font.
+---@field line_offset number -- Given a point P, the vertical gap between that point and where the text             should be actually rendered to look good.
 Font = {}
 
 ---@return number
 function Font.get_line_height () end
+
+---@return number
+function Font.get_line_offset () end
 
 ---@param str string 
 ---@return PlainTextSprite
@@ -129,12 +152,24 @@ function FrameSprite.to_string () end
 
 -- #region G
 ---@class G
+---@field name string -- The current player's name.
+---@field time_played number -- The amount of time, in seconds, that this game has been played.
 ---@field money number -- The amount of money the player has.
+---@field inventory Inventory
 ---@field dex_unlocked boolean
 G = {}
 
+---@return string
+function G.get_name () end
+
+---@return number
+function G.get_time_played () end
+
 ---@return number
 function G.get_money () end
+
+---@return Inventory
+function G.get_inventory () end
 
 ---@return boolean
 function G.get_dex_unlocked () end
@@ -167,6 +202,10 @@ function Hud.message (text) end
 ---@param default_choice number | nil The default choice if the player cancels the choice. A value of -1 indicates no choice.
 function Hud.choice_message (message, choices, can_be_cancelled, default_choice) end
 
+---@param script_name string 
+---@return HudElement
+function Hud.script_element (script_name) end
+
 ---Pauses execution of this script for the amount of time given (in ms).
 ---@param ms number The amount of time, in milliseconds, to wait.
 function Hud.wait (ms) end
@@ -174,6 +213,67 @@ function Hud.wait (ms) end
 ---@return string
 function Hud.to_string () end
 -- #endregion Hud
+
+-- #region HudElement
+---@class HudElement
+---@field is_closed boolean
+HudElement = {}
+
+---@return boolean
+function HudElement.get_is_closed () end
+
+function HudElement.close () end
+
+---@return string
+function HudElement.to_string () end
+-- #endregion HudElement
+
+-- #region Inventory
+---@class Inventory
+Inventory = {}
+
+---@param item_id string 
+---@return number
+function Inventory.get_amount (item_id) end
+
+---@param item_id string 
+---@param amount number 
+---@return number
+function Inventory.add_amount (item_id, amount) end
+
+---@param item_id string 
+---@param amount number 
+---@return number
+function Inventory.remove_amount (item_id, amount) end
+
+---@param item_id string 
+function Inventory.add_favorite (item_id) end
+
+---@param item_id string 
+function Inventory.remove_favorite (item_id) end
+
+---@param index number 
+---@return unknown
+function Inventory.get_items_at (index) end
+
+---@return unknown
+function Inventory.get_favorite_items () end
+
+---@return string
+function Inventory.to_string () end
+-- #endregion Inventory
+
+-- #region InventoryItem
+---@class InventoryItem
+---@field item_id string
+---@field amount number
+InventoryItem = {}
+
+---@param item_id string 
+---@param amount number 
+---@return InventoryItem
+function InventoryItem.new (item_id, amount) end
+-- #endregion InventoryItem
 
 -- #region Logger
 ---@class Logger
@@ -201,7 +301,7 @@ function Logger.to_string () end
 -- #region PlainTextSprite
 ---@class PlainTextSprite
 ---@field width number -- This sprite's width.
----@field weight number -- This sprite's height.
+---@field height number -- This sprite's height.
 PlainTextSprite = {}
 
 ---@param color Color 
@@ -217,13 +317,20 @@ function PlainTextSprite.to_string () end
 function PlainTextSprite.get_width () end
 
 ---@return number
-function PlainTextSprite.get_weight () end
+function PlainTextSprite.get_height () end
 
----@param pos Vec2 
+---Draws the sprite at the position given, anchored at the top left.
+---@param pos Vec2 The position at which to draw the sprite.
 function PlainTextSprite.draw (pos) end
 
----@param pos Vec2 
----@param size Vec2 
+---Draws the sprite at the position given, with the anchor given.
+---@param pos Vec2 The position at which to draw the sprite.
+---@param anchor unknown The anchor to use.
+function PlainTextSprite.draw (pos, anchor) end
+
+---Draws the sprite at the position given, with the size given.
+---@param pos Vec2 The position at which to draw the sprite.
+---@param size Vec2 The size in the screen of the drawn sprite.
 function PlainTextSprite.draw (pos, size) end
 -- #endregion PlainTextSprite
 
@@ -275,6 +382,16 @@ function Renderer.get_font (name) end
 ---@return Font
 function Renderer.get_default_font () end
 
+---Paints the entire screen on the color given.
+---@param color Color The color to use.
+function Renderer.paint_screen (color) end
+
+---Draws a rectangle with the parameters given.
+---@param pos Vec2 The position of the top-left corner.
+---@param size Vec2 The rectangle's size.
+---@param color Color The rectangle's color.
+function Renderer.draw_rectangle (pos, size, color) end
+
 ---@return string
 function Renderer.to_string () end
 -- #endregion Renderer
@@ -289,8 +406,17 @@ function Screen.close_current_screen () end
 ---Opens the main menu.
 function Screen.open_main_menu () end
 
+---Opens the bag.
+function Screen.open_bag () end
+
 ---Opens the save game screen.
 function Screen.open_save_game () end
+
+---Plays a transition on screen as described.
+---@param script_name string The name of the transition's script.
+---@param seconds number The time, in seconds, that will take for the             transition to complete.
+---@param reverse boolean True to transition FROM black, rather than TO black.
+function Screen.play_transition (script_name, seconds, reverse) end
 
 ---@return string
 function Screen.to_string () end
@@ -299,20 +425,27 @@ function Screen.to_string () end
 -- #region Sprite
 ---@class Sprite
 ---@field width number -- This sprite's width.
----@field weight number -- This sprite's height.
+---@field height number -- This sprite's height.
 Sprite = {}
 
 ---@return number
 function Sprite.get_width () end
 
 ---@return number
-function Sprite.get_weight () end
+function Sprite.get_height () end
 
----@param pos Vec2 
+---Draws the sprite at the position given, anchored at the top left.
+---@param pos Vec2 The position at which to draw the sprite.
 function Sprite.draw (pos) end
 
----@param pos Vec2 
----@param size Vec2 
+---Draws the sprite at the position given, with the anchor given.
+---@param pos Vec2 The position at which to draw the sprite.
+---@param anchor unknown The anchor to use.
+function Sprite.draw (pos, anchor) end
+
+---Draws the sprite at the position given, with the size given.
+---@param pos Vec2 The position at which to draw the sprite.
+---@param size Vec2 The size in the screen of the drawn sprite.
 function Sprite.draw (pos, size) end
 
 ---@return string
@@ -323,7 +456,11 @@ function Sprite.to_string () end
 ---@class Vec2
 ---@field x number
 ---@field y number
+---@field zero Vec2 -- The vector (0, 0).
 Vec2 = {}
+
+---@return Vec2
+function Vec2.get_zero () end
 
 ---@param x number 
 ---@param y number 

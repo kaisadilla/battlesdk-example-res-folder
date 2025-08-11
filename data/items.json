@@ -1,0 +1,122 @@
+{
+    "poke_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "great_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "ultra_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "master_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "net_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "dive_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "nest_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "repeat_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "timer_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "luxury_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "premier_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "dusk_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "heal_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "quick_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    },
+    "cherish_ball": {
+        "category": "poke_ball",
+        "behaviors": [
+            {
+                "type": "catch_device"
+            }
+        ]
+    }
+}

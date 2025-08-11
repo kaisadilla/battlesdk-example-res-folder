@@ -6,6 +6,7 @@
  <properties>
   <property name="BackgroundMusic" value="lgpe_pallet_town"/>
   <property name="DisplayName" value="names.maps.test-map-1"/>
+  <property name="IsOutdoor" type="bool" value="true"/>
  </properties>
  <tileset firstgid="1" source="../tilesets/test-terrain.tsx"/>
  <tileset firstgid="201" source="../tilesets/test-trees.tsx"/>

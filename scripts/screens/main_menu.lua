@@ -105,7 +105,10 @@ function target:handle_input ()
     if Controls.get_key_down(ActionKey.primary) then
         if options[cursor].id == "bag" then
             Audio.play_beep_short()
+            Screen.play_transition("transitions/fade", 0.25, false)
+            Hud.wait(500)
             Screen.open_bag()
+            Screen.play_transition("transitions/horizontal_wipe", 0.25, true)
         elseif options[cursor].id == "save" then
             Audio.play_beep_short()
             target.close()

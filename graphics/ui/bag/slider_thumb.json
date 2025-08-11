@@ -1,0 +1,14 @@
+{
+    "type": "frame",
+    "x": [2, 16],
+    "y": [2, 10],
+    "x_mode": "stretch",
+    "y_mode": "stretch",
+    "center_mode": "stretch",
+    "padding": {
+        "right": 2,
+        "left": 2,
+        "top": 2,
+        "bottom": 2
+    }
+}

@@ -24,6 +24,8 @@ speed.ledge_jump = 1.875
 money.min = 0
 # The maximum amount of money the player may have.
 money.max = 999_999_999
+# The maximum amount of each item the player may have.
+item.max = 9_999
 
 [map]
 # The size of one tile in maps. This value cannot be overriden by any map setting,

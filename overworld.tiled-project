@@ -24,6 +24,11 @@
                     "name": "DisplayName",
                     "type": "string",
                     "value": ""
+                },
+                {
+                    "name": "IsOutdoor",
+                    "type": "bool",
+                    "value": false
                 }
             ],
             "name": "BattleSdkMap",

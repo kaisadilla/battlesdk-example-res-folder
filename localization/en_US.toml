@@ -17,3 +17,5 @@ menu.exit = "Exit"
 
 screens.save.text.1 = "Would you like to save the game? This will replace the current save for this game."
 screens.save.text.2 = "{player} saved the game."
+
+screens.bag.close = "<close bag>"

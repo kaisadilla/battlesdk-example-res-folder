@@ -1,0 +1,24 @@
+{
+    "key": {
+        "section": "key_items"
+    },
+    "medicine": {
+        "section": "medicine"
+    },
+    "poke_ball": {
+        "section": "poke_balls"
+    },
+    "battle": {
+        "section": "battle_items"
+    },
+    "tm": {
+        "section": "tms"
+    },
+    "berry": {
+        "section": "berries"
+    },
+    "other": {
+        "section": "other_items",
+        "is_default": true
+    }
+}
