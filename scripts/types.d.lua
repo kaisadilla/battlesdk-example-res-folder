@@ -142,6 +142,12 @@ function Entity.to_string () end
 ---@class Fmt
 Fmt = {}
 
+---@param val any 
+---@param padding unknown 
+---@param total_width number 
+---@return string
+function Fmt.pad_left (val, padding, total_width) end
+
 ---Formats time as HH:mm.
 ---@param time number An amount of time, in seconds.
 ---@return string
@@ -197,6 +203,9 @@ function FrameSprite.get_padding () end
 ---@param pos Vec2 
 ---@param size Vec2 
 function FrameSprite.draw (pos, size) end
+
+---@param anchor number 
+function FrameSprite.set_anchor (anchor) end
 
 ---@return string
 function FrameSprite.to_string () end
@@ -257,9 +266,9 @@ function Hud.message (text) end
 ---@param default_choice number | nil The default choice if the player cancels the choice. A value of -1 indicates no choice.
 function Hud.choice_message (message, choices, can_be_cancelled, default_choice) end
 
----@param script_name string 
----@param args Object 
----@return HudElement
+---Displays a hud element defined by the script given.
+---@param script_name string The name of the script in the registry for the hud element.
+---@param args Object The arguments that will be passed to the script's 'open' function.
 function Hud.script_element (script_name, args) end
 
 ---Pauses execution of this script for the amount of time given (in ms).
@@ -430,12 +439,10 @@ function Logger.to_string () end
 ---@field item unknown
 Object = {}
 
----@return Object
-function Object.new () end
-
----@param tbl table 
----@return Object
-function Object.new (tbl) end
+---@param ctx unknown 
+---@param args unknown 
+---@return any
+function Object.new (ctx, args) end
 
 ---@param key string 
 ---@return unknown
@@ -494,6 +501,9 @@ function PlainTextSprite.draw (pos, anchor) end
 ---@param pos Vec2 The position at which to draw the sprite.
 ---@param size Vec2 The size in the screen of the drawn sprite.
 function PlainTextSprite.draw (pos, size) end
+
+---@param anchor number 
+function PlainTextSprite.set_anchor (anchor) end
 
 ---@return string
 function PlainTextSprite.str () end
@@ -569,6 +579,10 @@ function Renderer.get_textbox (frame, font, pos, size, text) end
 ---@return ChoiceBox
 function Renderer.get_choice_box (frame, font, pos, anchor, choices) end
 
+---@param script_name string 
+---@return ScriptElement
+function Renderer.get_script_element (script_name) end
+
 ---Paints the entire screen on the color given.
 ---@param color Color The color to use.
 function Renderer.paint_screen (color) end
@@ -618,6 +632,47 @@ function Screen.to_string () end
 function Screen.str () end
 -- #endregion Screen
 
+-- #region ScriptElement
+---@class ScriptElement
+ScriptElement = {}
+
+function ScriptElement.draw () end
+
+function ScriptElement.update () end
+
+---@param func string 
+---@param args Object 
+function ScriptElement.call (func, args) end
+
+---@return string
+function ScriptElement.to_string () end
+
+---@return string
+function ScriptElement.str () end
+-- #endregion ScriptElement
+
+-- #region ScriptHudElement
+---@class ScriptHudElement
+---@field is_closed boolean
+ScriptHudElement = {}
+
+---@param result any 
+function ScriptHudElement.set_result (result) end
+
+---@return string
+function ScriptHudElement.to_string () end
+
+---@return boolean
+function ScriptHudElement.get_is_closed () end
+
+function ScriptHudElement.draw () end
+
+function ScriptHudElement.close () end
+
+---@return string
+function ScriptHudElement.str () end
+-- #endregion ScriptHudElement
+
 -- #region Sprite
 ---@class Sprite
 ---@field width number -- This sprite's width.
@@ -643,6 +698,9 @@ function Sprite.draw (pos, anchor) end
 ---@param pos Vec2 The position at which to draw the sprite.
 ---@param size Vec2 The size in the screen of the drawn sprite.
 function Sprite.draw (pos, size) end
+
+---@param anchor number 
+function Sprite.set_anchor (anchor) end
 
 ---@return string
 function Sprite.to_string () end

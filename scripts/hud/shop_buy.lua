@@ -124,10 +124,16 @@ function target.handle_input ()
         Audio.play_beep_short()
         
         if list_mgr.cursor <= #name_txts then
-            local res = Hud.script_element("hud/buy_amount_box", Object.new({
-                price = items[list_mgr.cursor].price,
-                position = BUY_BOX_POS - Vec2.new(108, 44),
-            }))
+            local item = items[list_mgr.cursor]
+
+            local res = Hud.script_element(
+                "hud/buy_amount_choice_message",
+                Object.new({
+                    message = loc("names.items." .. item.id) .. "? Certainly.\nHow many would you like?",
+                    price = item.price,
+                    position = BUY_BOX_POS - Vec2.new(108, 44),
+                }
+            ))
             Logger.info(res)
         else
             target.close()

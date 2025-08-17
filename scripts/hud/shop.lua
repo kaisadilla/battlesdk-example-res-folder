@@ -14,7 +14,6 @@ function target.draw ()
 end
 
 function start (welcome_msg, items)
-    --el.call("say_hi", Object.new({ msg = "Mega marshall message" }))
     local res = Hud.choice_message(
         welcome_msg,
         {
