@@ -51,10 +51,11 @@ table.insert(options, {
 })
 
 local cursor = 1
+local input_locked = false
 
 local menu_frame = renderer:get_frame('ui/frames/dp_menu')
 local menu_padding = menu_frame.padding
-local menu_selection_frame = renderer:get_sprite('ui/menu_selection')
+local menu_cursor_frame = renderer:get_sprite('ui/menu_selection')
 
 local menu_pos = Vec2.new(renderer.width - 102, 2)
 local menu_size = Vec2.new(
@@ -66,10 +67,9 @@ if menu_frame == nil then
     Logger.error("Couldn't find menu frame")
 end
 
-Logger.info("Loaded main menu!")
-
 function target:open ()
     Audio.play("menu_open")
+    input_locked = false
 end
 
 function target:draw ()
@@ -85,6 +85,8 @@ function target:draw ()
 end
 
 function target:handle_input ()
+    if input_locked then return end
+
     if Controls.get_key_down(ActionKey.up) then
         Audio.play_beep_short()
 
@@ -104,11 +106,13 @@ function target:handle_input ()
     end
     if Controls.get_key_down(ActionKey.primary) then
         if options[cursor].id == "bag" then
+            input_locked = true
             Audio.play_beep_short()
             Screen.play_transition("transitions/fade", 0.25, false)
             Hud.wait(500)
             Screen.open_bag()
             Screen.play_transition("transitions/horizontal_wipe", 0.25, true)
+            input_locked = false
         elseif options[cursor].id == "save" then
             Audio.play_beep_short()
             target.close()
@@ -151,5 +155,5 @@ function draw_selection_frame ()
         OPTION_HEIGHT + 2
     )
     
-    menu_selection_frame.draw(menu_pos + offset, Vec2:new(92, 26))
+    menu_cursor_frame.draw(menu_pos + offset, Vec2:new(92, 26))
 end

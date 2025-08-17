@@ -19,3 +19,11 @@ screens.save.text.1 = "Would you like to save the game? This will replace the cu
 screens.save.text.2 = "{player} saved the game."
 
 screens.bag.close = "<close bag>"
+screens.bag.item_menu.give = "Give"
+screens.bag.item_menu.toss = "Toss"
+screens.bag.item_menu.cancel = "Cancel"
+
+ui.scoreboard.money.label = "Money"
+ui.scoreboard.money.value = "$ {money}"
+
+ui.shop.cancel = "<cancel>"

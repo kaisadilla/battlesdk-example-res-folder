@@ -11,6 +11,35 @@ function Audio.play_beep_short () end
 function Audio.to_string () end
 -- #endregion Audio
 
+-- #region ChoiceBox
+---@class ChoiceBox
+---@field position Vec2
+---@field width number
+---@field height number
+ChoiceBox = {}
+
+---@return Vec2
+function ChoiceBox.get_position () end
+
+---@return number
+function ChoiceBox.get_width () end
+
+---@return number
+function ChoiceBox.get_height () end
+
+function ChoiceBox.draw () end
+
+function ChoiceBox.move_up () end
+
+function ChoiceBox.move_down () end
+
+---@return string
+function ChoiceBox.to_string () end
+
+---@return string
+function ChoiceBox.str () end
+-- #endregion ChoiceBox
+
 -- #region Color
 ---@class Color
 ---@field r number
@@ -25,6 +54,12 @@ Color = {}
 ---@param a number 
 ---@return Color
 function Color.new (r, g, b, a) end
+
+---@return string
+function Color.to_string () end
+
+---@return string
+function Color.str () end
 -- #endregion Color
 
 -- #region Controls
@@ -46,6 +81,18 @@ function Controls.get_key_up (key) end
 ---@return string
 function Controls.to_string () end
 -- #endregion Controls
+
+-- #region Data
+---@class Data
+Data = {}
+
+---@param item_id string 
+---@return Item
+function Data.get_item (item_id) end
+
+---@return string
+function Data.to_string () end
+-- #endregion Data
 
 -- #region Entity
 ---@class Entity
@@ -123,15 +170,20 @@ function Font.get_line_height () end
 function Font.get_line_offset () end
 
 ---@param str string 
+---@param max_width number 
 ---@return PlainTextSprite
-function Font.render_plain_text (str) end
+function Font.render_plain_text (str, max_width) end
 
 ---@param str string 
+---@param max_width number 
 ---@return PlainTextSprite
-function Font.render_plain_text_shadowed (str) end
+function Font.render_plain_text_shadowed (str, max_width) end
 
 ---@return string
 function Font.to_string () end
+
+---@return string
+function Font.str () end
 -- #endregion Font
 
 -- #region FrameSprite
@@ -148,6 +200,9 @@ function FrameSprite.draw (pos, size) end
 
 ---@return string
 function FrameSprite.to_string () end
+
+---@return string
+function FrameSprite.str () end
 -- #endregion FrameSprite
 
 -- #region G
@@ -203,8 +258,9 @@ function Hud.message (text) end
 function Hud.choice_message (message, choices, can_be_cancelled, default_choice) end
 
 ---@param script_name string 
+---@param args Object 
 ---@return HudElement
-function Hud.script_element (script_name) end
+function Hud.script_element (script_name, args) end
 
 ---Pauses execution of this script for the amount of time given (in ms).
 ---@param ms number The amount of time, in milliseconds, to wait.
@@ -212,6 +268,9 @@ function Hud.wait (ms) end
 
 ---@return string
 function Hud.to_string () end
+
+---@return string
+function Hud.str () end
 -- #endregion Hud
 
 -- #region HudElement
@@ -222,10 +281,15 @@ HudElement = {}
 ---@return boolean
 function HudElement.get_is_closed () end
 
+function HudElement.draw () end
+
 function HudElement.close () end
 
 ---@return string
 function HudElement.to_string () end
+
+---@return string
+function HudElement.str () end
 -- #endregion HudElement
 
 -- #region Inventory
@@ -261,6 +325,9 @@ function Inventory.get_favorite_items () end
 
 ---@return string
 function Inventory.to_string () end
+
+---@return string
+function Inventory.str () end
 -- #endregion Inventory
 
 -- #region InventoryItem
@@ -273,7 +340,67 @@ InventoryItem = {}
 ---@param amount number 
 ---@return InventoryItem
 function InventoryItem.new (item_id, amount) end
+
+---@return string
+function InventoryItem.to_string () end
+
+---@return string
+function InventoryItem.str () end
 -- #endregion InventoryItem
+
+-- #region Item
+---@class Item
+---@field category_id string -- The id of the category this item belongs to.
+---@field price number -- The item's price. This value can contain decimals.
+Item = {}
+
+---@return unknown
+function Item.get__item () end
+
+---@return string
+function Item.get_category_id () end
+
+---@return number
+function Item.get_price () end
+
+---@return string
+function Item.to_string () end
+
+---@return string
+function Item.str () end
+-- #endregion Item
+
+-- #region List
+---@class List
+---@field item unknown
+List = {}
+
+---@return List
+function List.new () end
+
+---@param tbl table 
+---@return List
+function List.new (tbl) end
+
+---@param key number 
+---@return unknown
+function List.get__item (key) end
+
+---@param key number 
+---@param value unknown 
+function List.set__item (key, value) end
+
+---@param ctx unknown 
+---@param args unknown 
+---@return any
+function List.ipairs (ctx, args) end
+
+---@return string
+function List.to_string () end
+
+---@return string
+function List.str () end
+-- #endregion List
 
 -- #region Logger
 ---@class Logger
@@ -298,11 +425,46 @@ function Logger.fatal (msg) end
 function Logger.to_string () end
 -- #endregion Logger
 
+-- #region Object
+---@class Object
+---@field item unknown
+Object = {}
+
+---@return Object
+function Object.new () end
+
+---@param tbl table 
+---@return Object
+function Object.new (tbl) end
+
+---@param key string 
+---@return unknown
+function Object.get__item (key) end
+
+---@param key string 
+---@param value unknown 
+function Object.set__item (key, value) end
+
+---@param ctx unknown 
+---@param args unknown 
+---@return any
+function Object.pairs (ctx, args) end
+
+---@return string
+function Object.to_string () end
+
+---@return string
+function Object.str () end
+-- #endregion Object
+
 -- #region PlainTextSprite
 ---@class PlainTextSprite
 ---@field width number -- This sprite's width.
 ---@field height number -- This sprite's height.
 PlainTextSprite = {}
+
+---@param anchor number 
+function PlainTextSprite.set_anchor (anchor) end
 
 ---@param color Color 
 function PlainTextSprite.set_color (color) end
@@ -332,6 +494,9 @@ function PlainTextSprite.draw (pos, anchor) end
 ---@param pos Vec2 The position at which to draw the sprite.
 ---@param size Vec2 The size in the screen of the drawn sprite.
 function PlainTextSprite.draw (pos, size) end
+
+---@return string
+function PlainTextSprite.str () end
 -- #endregion PlainTextSprite
 
 -- #region Rect
@@ -348,6 +513,12 @@ Rect = {}
 ---@param right number 
 ---@return Rect
 function Rect.new (top, left, bottom, right) end
+
+---@return string
+function Rect.to_string () end
+
+---@return string
+function Rect.str () end
 -- #endregion Rect
 
 -- #region Renderer
@@ -382,6 +553,22 @@ function Renderer.get_font (name) end
 ---@return Font
 function Renderer.get_default_font () end
 
+---@param frame string 
+---@param font string 
+---@param pos Vec2 
+---@param size Vec2 
+---@param text string 
+---@return Textbox
+function Renderer.get_textbox (frame, font, pos, size, text) end
+
+---@param frame string 
+---@param font string 
+---@param pos Vec2 
+---@param anchor number 
+---@param choices unknown 
+---@return ChoiceBox
+function Renderer.get_choice_box (frame, font, pos, anchor, choices) end
+
 ---Paints the entire screen on the color given.
 ---@param color Color The color to use.
 function Renderer.paint_screen (color) end
@@ -394,6 +581,9 @@ function Renderer.draw_rectangle (pos, size, color) end
 
 ---@return string
 function Renderer.to_string () end
+
+---@return string
+function Renderer.str () end
 -- #endregion Renderer
 
 -- #region Screen
@@ -412,6 +602,9 @@ function Screen.open_bag () end
 ---Opens the save game screen.
 function Screen.open_save_game () end
 
+---Opens the shop screen, if it exists.
+function Screen.open_shop () end
+
 ---Plays a transition on screen as described.
 ---@param script_name string The name of the transition's script.
 ---@param seconds number The time, in seconds, that will take for the             transition to complete.
@@ -420,6 +613,9 @@ function Screen.play_transition (script_name, seconds, reverse) end
 
 ---@return string
 function Screen.to_string () end
+
+---@return string
+function Screen.str () end
 -- #endregion Screen
 
 -- #region Sprite
@@ -450,7 +646,38 @@ function Sprite.draw (pos, size) end
 
 ---@return string
 function Sprite.to_string () end
+
+---@return string
+function Sprite.str () end
 -- #endregion Sprite
+
+-- #region Textbox
+---@class Textbox
+---@field position Vec2
+---@field width number
+---@field height number
+Textbox = {}
+
+---@return Vec2
+function Textbox.get_position () end
+
+---@return number
+function Textbox.get_width () end
+
+---@return number
+function Textbox.get_height () end
+
+function Textbox.draw () end
+
+---@param anchor number 
+function Textbox.set_anchor (anchor) end
+
+---@return string
+function Textbox.to_string () end
+
+---@return string
+function Textbox.str () end
+-- #endregion Textbox
 
 -- #region Vec2
 ---@class Vec2
@@ -472,6 +699,11 @@ function Vec2.new (x, y) end
 ---@return Vec2
 function Vec2.op__addition (a, b) end
 
+---@param a Vec2 
+---@param b Vec2 
+---@return Vec2
+function Vec2.op__subtraction (a, b) end
+
 ---@param mult number 
 ---@param vec Vec2 
 ---@return Vec2
@@ -481,5 +713,8 @@ function Vec2.op__multiply (mult, vec) end
 ---@param mult number 
 ---@return Vec2
 function Vec2.op__multiply (vec, mult) end
+
+---@return string
+function Vec2.str () end
 -- #endregion Vec2
 

@@ -1,6 +1,9 @@
+local summary
+
 function target:open ()
-    Logger.info("a")
-    local summary = Hud.script_element("hud/game_summary")
+    summary = require("lib.screen_elements.game_summary")
+    summary.build()
+
     local choice = Hud.choice_message(
         "screens.save.text.1",
         {
@@ -13,14 +16,15 @@ function target:open ()
 
     if choice == 2 then
         target:close()
-        summary:close()
         return
     end
 
-    Logger.info("b")
     Audio.play("game_saved")
     Hud.message("screens.save.text.2")
     Logger.info("Now the game would be saved.")
     target:close()
-    summary:close()
+end
+
+function target:draw ()
+    if summary then summary.draw() end
 end

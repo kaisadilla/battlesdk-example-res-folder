@@ -1,0 +1,9 @@
+{
+    "type": "spritesheet",
+    "sprite_size": [18, 12],
+    "names": [
+        "up",
+
+        "down"
+    ]
+}

@@ -78,5 +78,17 @@
             "type": "script",
             "script": "characters/test-map-1/brawly"
         }
+    },
+    {
+        "type": "npc",
+        "sprite": "characters/shopkeeper_hgss_m",
+        "position": [8, 20],
+        "movement": {
+            "type": "random"
+        },
+        "interaction": {
+            "type": "script",
+            "script": "characters/test-map-1/shopkeeper"
+        }
     }
 ]

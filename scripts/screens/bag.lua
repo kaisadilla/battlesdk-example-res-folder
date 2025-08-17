@@ -23,10 +23,16 @@ local DESC_POS = Vec2.new(44, 176)
 --- The size of the item's description string.
 local DESC_SIZE = Vec2.new(324 - 44, 240 - 176)
 
----The pouch in the bag that's currently selected.
+local SELECTION_CHOICE_BOX_POS = Vec2.new(renderer.width - 3, renderer.height - 70)
+
+local input_locked = true
+
+---The pouch in the bag that's currently active.
 local section = 1
----The index of the item currently selected.
+---The index of the item currently focused.
 local cursor = 1
+---True if the currently focused item is selected.
+local is_item_selected = false
 
 local font = renderer:get_default_font();
 if font == nil then Logger.error("Couldn't load font.") end
@@ -64,8 +70,6 @@ local bags = {
 
 local move = renderer:get_sprite("ui/bag/move")
 local select = renderer:get_sprite("ui/bag/select")
----@type Sprite | nil
-local item_sprite = nil
 
 local slider_arrow_up = renderer:get_sprite('ui/bag/slider_arrows/up')
 local slider_arrow_down = renderer:get_sprite('ui/bag/slider_arrows/down')
@@ -87,11 +91,17 @@ local item_name_sprites = {}
 local item_name_sprites = {}
 ---@type PlainTextSprite[]
 local item_amount_sprites = {}
+---@type Sprite | nil
+local item_sprite = nil
 ---@type PlainTextSprite | nil
 local item_desc_sprite = nil
 
+---@type ChoiceBox | nil
+local selection_choice_box = nil
+
 function target:open ()
     update_pocket_info()
+    input_locked = false
 end
 
 function target:draw ()
@@ -105,9 +115,15 @@ function target:draw ()
     draw_cursor()
     draw_arrows()
     draw_desc_box()
+
+    if is_item_selected then
+        if selection_choice_box then selection_choice_box.draw() end
+    end
 end
 
 function target:handle_input ()
+    if input_locked then return end
+
     if Controls.get_key_down(ActionKey.left) then
         Audio.play_beep_short()
 
@@ -132,29 +148,51 @@ function target:handle_input ()
     if Controls.get_key_down(ActionKey.up) then
         Audio.play_beep_short()
 
-        if cursor > 1 then
-            cursor = cursor - 1
+        if is_item_selected then
+            if selection_choice_box then
+                selection_choice_box.move_up()
+            end
         else
-            cursor = #section_items + 1
-        end
+            if cursor > 1 then
+                cursor = cursor - 1
+            else
+                cursor = #section_items + 1
+            end
 
-        update_item_info()
+            update_item_info()
+        end
     elseif Controls.get_key_down(ActionKey.down) then
         Audio.play_beep_short()
 
-        if cursor <= #section_items then
-            cursor = cursor + 1
+        if is_item_selected then
+            if selection_choice_box then
+                selection_choice_box.move_down()
+            end
         else
-            cursor = 1
-        end
+            if cursor <= #section_items then
+                cursor = cursor + 1
+            else
+                cursor = 1
+            end
 
-        update_item_info()
+            update_item_info()
+        end
     end
     if Controls.get_key_down(ActionKey.primary) then
-        if cursor > #section_items then close_bag() end
+        if cursor <= #section_items then
+            Audio.play_beep_short()
+            is_item_selected = true
+        else
+            close_bag()
+        end
     end
     if Controls.get_key_down(ActionKey.secondary) then
-        close_bag()
+        if is_item_selected then
+            Audio.play_beep_short()
+            is_item_selected = false
+        else
+            close_bag()
+        end
     end
 end
 
@@ -182,8 +220,21 @@ function update_item_info ()
         )
         item_desc_sprite.set_color(Color.new(255, 255, 255, 255)) -- TODO: Predetermined colors
         item_desc_sprite.set_shadow_color(Color.new(0, 0, 0, 153))
+
+        selection_choice_box = renderer.get_choice_box(
+            "ui/frames/dp_box",
+            "power_clear",
+            SELECTION_CHOICE_BOX_POS,
+            AnchorPoint.bottom_right,
+            {
+                loc("screens.bag.item_menu.give"),
+                loc("screens.bag.item_menu.toss"),
+                loc("screens.bag.item_menu.cancel"),
+            }
+        )
     else
         item_sprite = renderer:get_sprite("ui/bag/back_icon")
+        item_desc_sprite = nil
     end
 end
 
@@ -216,7 +267,7 @@ function draw_item_list ()
             )
             item_amount_sprites[index].draw(
                 Vec2.new(AMOUNT_X, y_pos),
-                Position.top_right
+                AnchorPoint.top_right
             )
         elseif index == #section_items + 1 then
             close_bag_sprite.draw(
@@ -302,7 +353,8 @@ function get_cursor_screen_position ()
 end
 
 function close_bag ()
-    Audio.play_beep_short()
+    input_locked = true
+    Audio.play("screen_close")
     Screen.play_transition("transitions/horizontal_wipe", 0.25, false)
     Hud.wait(500)
     target.close()
