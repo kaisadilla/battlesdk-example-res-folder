@@ -1,3 +1,31 @@
+-- #region AnimatableTextbox
+---@class AnimatableTextbox
+---@field position Vec2
+---@field width number
+---@field height number
+AnimatableTextbox = {}
+
+---@return Vec2
+function AnimatableTextbox.get_position () end
+
+---@return number
+function AnimatableTextbox.get_width () end
+
+---@return number
+function AnimatableTextbox.get_height () end
+
+function AnimatableTextbox.draw () end
+
+---@param anchor number 
+function AnimatableTextbox.set_anchor (anchor) end
+
+---@return string
+function AnimatableTextbox.to_string () end
+
+---@return string
+function AnimatableTextbox.str () end
+-- #endregion AnimatableTextbox
+
 -- #region Audio
 ---@class Audio
 Audio = {}
@@ -292,6 +320,10 @@ function HudElement.get_is_closed () end
 
 function HudElement.draw () end
 
+function HudElement.update () end
+
+function HudElement.handle_input () end
+
 function HudElement.close () end
 
 ---@return string
@@ -433,6 +465,36 @@ function Logger.fatal (msg) end
 ---@return string
 function Logger.to_string () end
 -- #endregion Logger
+
+-- #region MessageHudElement
+---@class MessageHudElement
+---@field is_message_complete boolean
+---@field is_closed boolean
+MessageHudElement = {}
+
+---@return boolean
+function MessageHudElement.get_is_message_complete () end
+
+---@return string
+function MessageHudElement.to_string () end
+
+---@return string
+function MessageHudElement.str () end
+
+---@return boolean
+function MessageHudElement.get_is_closed () end
+
+function MessageHudElement.draw () end
+
+function MessageHudElement.update () end
+
+function MessageHudElement.handle_input () end
+
+function MessageHudElement.close () end
+
+---@return string
+function MessageHudElement.str () end
+-- #endregion MessageHudElement
 
 -- #region Object
 ---@class Object
@@ -583,6 +645,18 @@ function Renderer.get_choice_box (frame, font, pos, anchor, choices) end
 ---@return ScriptElement
 function Renderer.get_script_element (script_name) end
 
+---Gets a message hud element that isn't controlled by the Hud.
+---@param frame string The name of the frame to use.
+---@param font string The name of the font to use.
+---@param text string The text contained in the message box.
+---@return MessageHudElement
+function Renderer.get_message_hud_element (frame, font, text) end
+
+---@param script_name string 
+---@param args Object 
+---@return ScriptHudElement
+function Renderer.get_script_hud_element (script_name, args) end
+
 ---Paints the entire screen on the color given.
 ---@param color Color The color to use.
 function Renderer.paint_screen (color) end
@@ -653,8 +727,12 @@ function ScriptElement.str () end
 
 -- #region ScriptHudElement
 ---@class ScriptHudElement
+---@field result any
 ---@field is_closed boolean
 ScriptHudElement = {}
+
+---@return any
+function ScriptHudElement.get__result () end
 
 ---@param result any 
 function ScriptHudElement.set_result (result) end
@@ -666,6 +744,10 @@ function ScriptHudElement.to_string () end
 function ScriptHudElement.get_is_closed () end
 
 function ScriptHudElement.draw () end
+
+function ScriptHudElement.update () end
+
+function ScriptHudElement.handle_input () end
 
 function ScriptHudElement.close () end
 

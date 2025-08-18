@@ -1,16 +1,16 @@
-local list = {}
-list.__index = list
+local List = {}
+List.__index = List
 
-function list.new (count, visible_items)
+function List.new (count, visible_items)
     return setmetatable({
         cursor = 1,
         count = count,
         visible_items = visible_items,
         cursor_position = math.ceil(visible_items / 2)
-    }, list)
+    }, List)
 end
 
-function list:move_cursor_up ()
+function List:move_cursor_up ()
     if self.cursor > 1 then
         self.cursor = self.cursor - 1
     else
@@ -18,7 +18,7 @@ function list:move_cursor_up ()
     end
 end
 
-function list:move_cursor_down ()
+function List:move_cursor_down ()
     if self.cursor <= self.count then
         self.cursor = self.cursor + 1
     else
@@ -26,7 +26,7 @@ function list:move_cursor_down ()
     end
 end
 
-function list:get_first_visible_index ()
+function List:get_first_visible_index ()
     local last_index = self.count + 1
 
     -- If there aren't enough items to fill the screen, we start at 1.
@@ -36,7 +36,7 @@ function list:get_first_visible_index ()
     if self.cursor < self.cursor_position then return 1 end
 
     -- If there aren't enough items to fill the lower part, the highest item
-    -- that allows seeing the end of the list.
+    -- that allows seeing the end of the List.
     if self.cursor > last_index - (self.visible_items - self.cursor_position) then
         return (last_index - self.visible_items) + 1
     end
@@ -45,7 +45,7 @@ function list:get_first_visible_index ()
     return self.cursor - (self.cursor_position - 1)
 end
 
-function list:get_cursor_screen_position ()
+function List:get_cursor_screen_position ()
     local last_index = self.count + 1
 
     -- All items fit on the screen, so the visual matches its logical position.
@@ -64,4 +64,4 @@ function list:get_cursor_screen_position ()
     return self.cursor_position
 end
 
-return list
+return List

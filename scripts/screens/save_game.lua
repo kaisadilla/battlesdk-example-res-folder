@@ -5,10 +5,10 @@ function target:open ()
     summary.build()
 
     local choice = Hud.choice_message(
-        "screens.save.text.1",
+        loc("screens.save.text.1"),
         {
-            "yes",
-            "no",
+            loc("yes"),
+            loc("no"),
         },
         true,
         2
@@ -20,7 +20,7 @@ function target:open ()
     end
 
     Audio.play("game_saved")
-    Hud.message("screens.save.text.2")
+    Hud.message(loc("screens.save.text.2"))
     Logger.info("Now the game would be saved.")
     target:close()
 end

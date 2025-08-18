@@ -1,1 +1,1 @@
-Hud:message("characters.test-map-1.piers")
+Hud:message(loc("characters.test-map-1.piers"))

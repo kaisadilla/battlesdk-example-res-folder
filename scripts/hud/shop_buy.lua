@@ -1,3 +1,6 @@
+local ListMgr = require("lib.scrollable_list_manager")
+local MoneyScoreboard = require("lib.screen_elements.money_scoreboard")
+
 local VISIBLE_ITEMS = 7
 local ITEM_X = 192
 local FIRST_ITEM_Y = 15
@@ -22,9 +25,6 @@ local CURSOR_X = ITEM_X - 9
 local CURSOR_RELATIVE_Y = -9
 
 local BUY_BOX_POS = Vec2.new(renderer.width - 2, renderer.height - 69)
-
-local ListMgr = require("lib.scrollable_list_manager")
-local MoneyScoreboard = require("lib.screen_elements.money_scoreboard")
 
 local font = renderer.get_default_font()
 
@@ -88,11 +88,11 @@ function target.open (args)
 
     list_mgr = ListMgr.new(#name_txts, VISIBLE_ITEMS)
     money_sb = MoneyScoreboard.new()
-    update_item_info()
+    update_focused_item_info()
 end
 
 function target.update ()
-
+    money_sb:update()
 end
 
 function target.draw ()
@@ -114,27 +114,17 @@ function target.handle_input ()
         Audio.play_beep_short()
         
         list_mgr:move_cursor_up()
-        update_item_info()
+        update_focused_item_info()
     elseif Controls.get_key_down(ActionKey.down) then
         Audio.play_beep_short()
 
         list_mgr:move_cursor_down()
-        update_item_info()
+        update_focused_item_info()
     elseif Controls.get_key_down(ActionKey.primary) then
         Audio.play_beep_short()
         
         if list_mgr.cursor <= #name_txts then
-            local item = items[list_mgr.cursor]
-
-            local res = Hud.script_element(
-                "hud/buy_amount_choice_message",
-                Object.new({
-                    message = loc("names.items." .. item.id) .. "? Certainly.\nHow many would you like?",
-                    price = item.price,
-                    position = BUY_BOX_POS - Vec2.new(108, 44),
-                }
-            ))
-            Logger.info(res)
+            purchase_current_item()
         else
             target.close()
         end
@@ -144,7 +134,7 @@ function target.handle_input ()
     end
 end
 
-function update_item_info ()
+function update_focused_item_info ()
     if list_mgr.cursor <= #items then
         local item = items[list_mgr.cursor]
         local in_bag = G.inventory.get_amount(item.id)
@@ -168,6 +158,53 @@ function update_item_info ()
         item_txt = renderer.get_sprite("ui/shop/back_icon")
         item_desc_txt = nil
     end
+end
+
+function purchase_current_item ()
+    local item = items[list_mgr.cursor]
+
+    -- When the player can't even buy 1x of the item, the purchase dialog is
+    -- never shown.
+    if G.money < item.price then
+        Hud.message(loc("ui.shop.not_enough_money"))
+        return
+    end
+
+    local amount = Hud.script_element(
+        "hud/amount_choice_message",
+        Object.new({
+            message = loc("ui.shop.buy_how_many", loc("names.items." .. item.id)),
+            price = item.price,
+            position = BUY_BOX_POS - Vec2.new(108, 44),
+            max_amount = math.floor(G.money / item.price),
+        }
+    ))
+
+    -- if the result is 'nil', the player cancelled the purchase.
+    if amount == nil then return end
+    local total_price = item.price * amount
+
+    local res = Hud.choice_message(
+        loc(
+            "ui.shop.buy_confirm",
+            loc("names.items." .. item.id),
+            amount,
+            total_price
+        ),
+        {
+            loc("yes"),
+            loc("no"),
+        }
+    )
+
+    -- 1 = "yes".
+    if res ~= 1 then return end
+
+    Audio.play("spend_money")
+    G.remove_money(total_price)
+    Hud.message(loc("ui.shop.buy_complete"))
+    obtain_items(item.id, amount)
+    update_focused_item_info()
 end
 
 -- #region Draw functions

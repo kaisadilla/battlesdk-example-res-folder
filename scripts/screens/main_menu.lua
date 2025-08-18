@@ -109,7 +109,7 @@ function target:handle_input ()
             input_locked = true
             Audio.play_beep_short()
             Screen.play_transition("transitions/fade", 0.25, false)
-            Hud.wait(500)
+            Script.wait(0.5)
             Screen.open_bag()
             Screen.play_transition("transitions/horizontal_wipe", 0.25, true)
             input_locked = false

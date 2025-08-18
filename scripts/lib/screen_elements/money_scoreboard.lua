@@ -10,6 +10,9 @@ local frame_size = Vec2.new(92, 44)
 
 local label = font.render_plain_text_shadowed(loc("ui.scoreboard.money.label"))
 
+-- The amount of money the player had when the text was rendered.
+local money_val = G.money
+
 function sb.new (row)
     row = row or 0
 
@@ -34,6 +37,16 @@ function sb:draw ()
             + frame_size
             - Vec2.new(frame_padding.right + 1, frame_padding.bottom + 1)
     )
+end
+
+function sb:update ()
+    if money_val ~= G.money then
+        money_val = G.money
+        self.value = font.render_plain_text_shadowed(
+            loc("ui.scoreboard.money.value")
+        )
+        self.value.set_anchor(AnchorPoint.bottom_right)
+    end
 end
 
 return sb

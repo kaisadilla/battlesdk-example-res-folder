@@ -29,8 +29,7 @@ local max_amount = 1
 function target.open (args)
     price = args.price
     position = args.position or position
-
-    max_amount = math.floor(G.money / price)
+    max_amount = args.max_amount
 
     update_amount()
 end

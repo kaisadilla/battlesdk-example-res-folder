@@ -26,13 +26,18 @@ function start (welcome_msg, items)
     if res == 1 then
         buy(welcome_msg, items)
     elseif res == 2 then
-        start(welcome_msg, items)
+        sell(welcome_msg, items)
     else
         target.close()
     end
 end
 
 function buy (welcome_msg, items)
-    Hud.script_element("hud/shop_buy", items)
+    Hud.script_element("hud/shop_buy", Object.new({ items = items }))
+    start(welcome_msg, items)
+end
+
+function sell (welcome_msg, items)
+    Hud.script_element("hud/shop_sell")
     start(welcome_msg, items)
 end

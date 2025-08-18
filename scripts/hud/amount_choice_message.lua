@@ -8,15 +8,17 @@ local box = nil
 function target.open (args)
     local msg = args.message
     local price = args.price
+    local max_amount = args.max_amount
 
     message = renderer.get_message_hud_element(
         "ui/frames/dp_textbox_1",
         "power_clear",
         msg
     )
-    box = renderer.get_script_hud_element("hud/buy_amount_box", Object.new({
+    box = renderer.get_script_hud_element("hud/amount_box", Object.new({
         price = price,
         position = BOX_POS - Vec2.new(108, 44),
+        max_amount = max_amount,
     }))
 end
 

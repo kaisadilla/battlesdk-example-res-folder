@@ -1,3 +1,6 @@
+[characters.default]
+shopkeeper = "Hello, how may I help you?"
+
 [characters.test-map-1]
 brawly.msg = "I love Fighing-type Pokémon. I think they are the bestest Pokémon out there. What's your opinion on the matter?"
 brawly.choices.1 = "I love them, they are fantastic!"
