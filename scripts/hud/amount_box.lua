@@ -1,9 +1,11 @@
 local SIZE = Vec2.new(108, 44)
 
-local font = renderer:get_default_font();
-
-local frame = renderer:get_frame('ui/frames/dp_box')
-local padding = frame.padding
+---@type Font
+local font
+---@type FrameSprite
+local frame
+---@type Rect
+local padding
 
 local position = Vec2.zero
 
@@ -13,20 +15,36 @@ local price = 0
 local amount_txt = nil
 ---@type PlainTextSprite | nil
 local price_txt = nil
-local amount_offset = Vec2.new(padding.left + 1, padding.top + 9)
-local price_offset = Vec2.new(SIZE.x - (padding.right + 1), padding.top + 9)
+---@type Vec2
+local amount_offset
+---@type Vec2
+local price_offset
 
 local up_arrow = renderer.get_sprite("ui/arrows/up")
 local down_arrow = renderer.get_sprite("ui/arrows/down")
 
-local up_arrow_offset = Vec2.new(padding.left + 4, padding.top - 1)
-local down_arrow_offset = Vec2.new(padding.left + 4, padding.top + 23)
+---@type Vec2
+local up_arrow_offset
+---@type Vec2
+local down_arrow_offset
 
 local max_amount = 1
 
---pos: 242,127
+local function init ()
+    font = renderer.get_default_font();
+    frame = renderer.get_default_box_frame()
+    padding = frame.padding
+
+    amount_offset = Vec2.new(padding.left + 1, padding.top + 9)
+    price_offset = Vec2.new(SIZE.x - (padding.right + 1), padding.top + 9)
+
+    up_arrow_offset = Vec2.new(padding.left + 4, padding.top - 1)
+    down_arrow_offset = Vec2.new(padding.left + 4, padding.top + 23)
+end
 
 function target.open (args)
+    init()
+
     price = args.price
     position = args.position or position
     max_amount = args.max_amount

@@ -1,8 +1,10 @@
+local GameSummary = require("lib.screen_elements.game_summary")
+
+---@type GameSummary
 local summary
 
 function target:open ()
-    summary = require("lib.screen_elements.game_summary")
-    summary.build()
+    summary = GameSummary.new()
 
     local choice = Hud.choice_message(
         loc("screens.save.text.1"),
@@ -26,5 +28,5 @@ function target:open ()
 end
 
 function target:draw ()
-    if summary then summary.draw() end
+    if summary then summary:draw() end
 end

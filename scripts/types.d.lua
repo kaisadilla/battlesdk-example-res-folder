@@ -118,6 +118,11 @@ Data = {}
 ---@return Item
 function Data.get_item (item_id) end
 
+---Returns the name of the pocket the item given naturally belongs to.
+---@param item_id string The id of the item to check.
+---@return string
+function Data.get_item_pocket (item_id) end
+
 ---@return string
 function Data.to_string () end
 -- #endregion Data
@@ -244,12 +249,16 @@ function FrameSprite.str () end
 
 -- #region G
 ---@class G
+---@field game_options GameSettings -- The options chosen by the player for this specific game.
 ---@field name string -- The current player's name.
 ---@field time_played number -- The amount of time, in seconds, that this game has been played.
 ---@field money number -- The amount of money the player has.
 ---@field inventory Inventory
 ---@field dex_unlocked boolean
 G = {}
+
+---@return GameSettings
+function G.get_game_options () end
 
 ---@return string
 function G.get_name () end
@@ -279,6 +288,80 @@ function G.remove_money (amount) end
 ---@return string
 function G.to_string () end
 -- #endregion G
+
+-- #region GameSettings
+---@class GameSettings
+---@field window_scale number -- The scale of the renderer.
+---@field is_full_screen boolean -- True when the game is in full screen. This setting has priority over             'window_scale'.
+---@field music_volume number -- A value between 0 and 1 indicating the volume of background music.
+---@field sound_volume number -- A value between 0 and 1 indicating the volume of sound effects.
+---@field battle_animations boolean -- When false, moves don't have any animation during battle.
+---@field give_nicknames boolean -- When false, the player won't be asked to give a nickname to creatures             they receive.
+---@field message_frame string -- The default frame to use for messages.
+---@field box_frame string -- The default frame to use for other kinds of boxes.
+---@field font string -- The default font to use.
+GameSettings = {}
+
+---@return number
+function GameSettings.get__window_scale () end
+
+---@return boolean
+function GameSettings.get_is_full_screen () end
+
+---@return number
+function GameSettings.get__music_volume () end
+
+---@return number
+function GameSettings.get__sound_volume () end
+
+---@return boolean
+function GameSettings.get__battle_animations () end
+
+---@return boolean
+function GameSettings.get__give_nicknames () end
+
+---@return string
+function GameSettings.get__message_frame () end
+
+---@return string
+function GameSettings.get__box_frame () end
+
+---@return string
+function GameSettings.get__font () end
+
+---@param scale number 
+function GameSettings.set_window_scale (scale) end
+
+---@param active boolean 
+function GameSettings.set_full_screen (active) end
+
+---@param volume number 
+function GameSettings.set_music_volume (volume) end
+
+---@param volume number 
+function GameSettings.set_sound_volume (volume) end
+
+---@param active boolean 
+function GameSettings.set_battle_animations (active) end
+
+---@param active boolean 
+function GameSettings.set_give_nicknames (active) end
+
+---@param sprite_name string 
+function GameSettings.set_message_frame (sprite_name) end
+
+---@param sprite_name string 
+function GameSettings.set_box_frame (sprite_name) end
+
+---@param font_name string 
+function GameSettings.set_font (font_name) end
+
+---@return string
+function GameSettings.to_string () end
+
+---@return string
+function GameSettings.str () end
+-- #endregion GameSettings
 
 -- #region Hud
 ---@class Hud
@@ -705,6 +788,24 @@ function Screen.to_string () end
 ---@return string
 function Screen.str () end
 -- #endregion Screen
+
+-- #region Script
+---@class Script
+Script = {}
+
+---Pauses execution of this script for the amount of time given (in seconds).
+---@param seconds number The amount of time, in seconds, to wait.
+function Script.wait (seconds) end
+
+---Pauses execution of this script until the next frame.
+function Script.wait_for_next_frame () end
+
+---@return string
+function Script.to_string () end
+
+---@return string
+function Script.str () end
+-- #endregion Script
 
 -- #region ScriptElement
 ---@class ScriptElement

@@ -26,7 +26,8 @@ local CURSOR_RELATIVE_Y = -9
 
 local BUY_BOX_POS = Vec2.new(renderer.width - 2, renderer.height - 69)
 
-local font = renderer.get_default_font()
+---@type Font
+local font
 
 local bg = renderer.get_sprite("ui/shop/bg")
 local cursor_sprite = renderer.get_sprite("ui/shop/cursor")
@@ -37,7 +38,8 @@ local items = {}
 local name_txts = {}
 ---@type PlainTextSprite[]
 local price_txts = {}
-local close_txt = font.render_plain_text_shadowed(loc("ui.shop.cancel"))
+---@type PlainTextSprite
+local close_txt
 
 local list_mgr
 
@@ -50,7 +52,14 @@ local in_bag_tb = nil
 
 local money_sb = nil
 
+local function init ()
+    font = renderer.get_default_font()
+    close_txt = font.render_plain_text_shadowed(loc("ui.shop.cancel"))
+end
+
 function target.open (args)
+    init()
+
     for i, item_def in args.items.ipairs() do
         local item = {}
 
@@ -103,10 +112,6 @@ function target.draw ()
     draw_desc_box()
 
     money_sb:draw()
-
-    if amount_box then
-        amount_box.draw()
-    end
 end
 
 function target.handle_input ()
@@ -147,8 +152,8 @@ function update_focused_item_info ()
         item_desc_txt.set_shadow_color(DESC_SHADOW_COLOR)
 
         in_bag_tb = renderer.get_textbox(
-            "ui/frames/dp_box",
-            "power_clear",
+            G.game_options.box_frame,
+            G.game_options.font,
             IN_BAG_POS,
             IN_BAG_SIZE,
             "In bag: " .. in_bag

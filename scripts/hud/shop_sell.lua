@@ -62,11 +62,13 @@ local function select (self, item_id)
     self:end_item_selection()
 end
 
-local bag = Bag.new(select, close_bag)
+---@type Bag
+local bag
 
 local opened = false
 
 function target.open (args)
+    bag = Bag.new(select, close_bag)
     bag:open()
     money_sb = MoneyScoreboard.new()
 

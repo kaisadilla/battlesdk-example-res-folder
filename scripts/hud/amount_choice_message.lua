@@ -11,8 +11,8 @@ function target.open (args)
     local max_amount = args.max_amount
 
     message = renderer.get_message_hud_element(
-        "ui/frames/dp_textbox_1",
-        "power_clear",
+        G.game_options.message_frame,
+        G.game_options.font,
         msg
     )
     box = renderer.get_script_hud_element("hud/amount_box", Object.new({

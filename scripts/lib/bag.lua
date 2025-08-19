@@ -1,5 +1,9 @@
 local ListMgr = require("lib.scrollable_list_manager")
 
+---@class Bag
+---@field input_locked boolean
+---@field section number
+---@field is_item_selected boolean
 local Bag = {}
 Bag.__index = Bag
 
@@ -32,54 +36,19 @@ local DESC_SHADOW_COLOR = Color.new(0, 0, 0, 153)
 
 local SELECTION_CHOICE_BOX_POS = Vec2.new(renderer.width - 3, renderer.height - 70)
 
-local font = renderer:get_default_font();
+local BAG_POS = Vec2.new(48, 30)
+local ARROW_UP_POS = Vec2.new(330, 8)
+local ARROW_DOWN_POS = Vec2.new(330, 146)
 
-local pocket_name_txts = {
-    font:render_plain_text_shadowed(loc("names.bag.favorites")),
-    font:render_plain_text_shadowed(loc("names.bag.key_items")),
-    font:render_plain_text_shadowed(loc("names.bag.medicine")),
-    font:render_plain_text_shadowed(loc("names.bag.poke_balls")),
-    font:render_plain_text_shadowed(loc("names.bag.battle_items")),
-    font:render_plain_text_shadowed(loc("names.bag.tms")),
-    font:render_plain_text_shadowed(loc("names.bag.berries")),
-    font:render_plain_text_shadowed(loc("names.bag.other_items")),
-}
-local pocket_bgs = {
-    renderer:get_sprite("ui/bag/bg_favorites"),
-    renderer:get_sprite("ui/bag/bg_key_items"),
-    renderer:get_sprite("ui/bag/bg_medicine"),
-    renderer:get_sprite("ui/bag/bg_poke_balls"),
-    renderer:get_sprite("ui/bag/bg_battle_items"),
-    renderer:get_sprite("ui/bag/bg_tms"),
-    renderer:get_sprite("ui/bag/bg_berries"),
-    renderer:get_sprite("ui/bag/bg_other_items"),
-}
-local bag_sprites = {
-    renderer:get_sprite("ui/bag/bag_1_favorites"),
-    renderer:get_sprite("ui/bag/bag_1_key_items"),
-    renderer:get_sprite("ui/bag/bag_1_medicine"),
-    renderer:get_sprite("ui/bag/bag_1_poke_balls"),
-    renderer:get_sprite("ui/bag/bag_1_battle_items"),
-    renderer:get_sprite("ui/bag/bag_1_tms"),
-    renderer:get_sprite("ui/bag/bag_1_berries"),
-    renderer:get_sprite("ui/bag/bag_1_other_items"),
-}
-
----The "<close>" text.
-local close_bag_txt = font:render_plain_text_shadowed(loc("screens.bag.close"))
 ---The sprite that appears when the focused "item" is the close bag option.
-local close_bag_sprite = renderer:get_sprite("ui/bag/back_icon")
+local close_bag_sprite = renderer.get_sprite("ui/bag/back_icon")
 
-local move = renderer:get_sprite("ui/bag/move")
-local select = renderer:get_sprite("ui/bag/select")
+local move = renderer.get_sprite("ui/bag/move")
+local select = renderer.get_sprite("ui/bag/select")
 
-local slider_arrow_up = renderer:get_sprite('ui/bag/slider_arrows/up')
-local slider_arrow_down = renderer:get_sprite('ui/bag/slider_arrows/down')
-local slider_thumb = renderer:get_sprite('ui/bag/slider_thumb')
-
-local bag_pos = Vec2.new(48, 30)
-local arrow_up_pos = Vec2.new(330, 8)
-local arrow_down_pos = Vec2.new(330, 146)
+local slider_arrow_up = renderer.get_sprite('ui/bag/slider_arrows/up')
+local slider_arrow_down = renderer.get_sprite('ui/bag/slider_arrows/down')
+local slider_thumb = renderer.get_sprite('ui/bag/slider_thumb')
 
 --- Private methods
 local update_pocket_info,
@@ -91,8 +60,46 @@ local update_pocket_info,
     draw_arrows,
     draw_desc_box
 
+---@return Bag
 function Bag.new (select_callback, close_callback)
+    local font = renderer.get_default_font()
+
     return setmetatable({
+        -- Resources:
+        font = font,
+        pocket_name_txts = {
+            font.render_plain_text_shadowed(loc("names.bag.favorites")),
+            font.render_plain_text_shadowed(loc("names.bag.key_items")),
+            font.render_plain_text_shadowed(loc("names.bag.medicine")),
+            font.render_plain_text_shadowed(loc("names.bag.poke_balls")),
+            font.render_plain_text_shadowed(loc("names.bag.battle_items")),
+            font.render_plain_text_shadowed(loc("names.bag.tms")),
+            font.render_plain_text_shadowed(loc("names.bag.berries")),
+            font.render_plain_text_shadowed(loc("names.bag.other_items")),
+        },
+        pocket_bgs = {
+            renderer.get_sprite("ui/bag/bg_favorites"),
+            renderer.get_sprite("ui/bag/bg_key_items"),
+            renderer.get_sprite("ui/bag/bg_medicine"),
+            renderer.get_sprite("ui/bag/bg_poke_balls"),
+            renderer.get_sprite("ui/bag/bg_battle_items"),
+            renderer.get_sprite("ui/bag/bg_tms"),
+            renderer.get_sprite("ui/bag/bg_berries"),
+            renderer.get_sprite("ui/bag/bg_other_items"),
+        },
+        bag_sprites = {
+            renderer.get_sprite("ui/bag/bag_1_favorites"),
+            renderer.get_sprite("ui/bag/bag_1_key_items"),
+            renderer.get_sprite("ui/bag/bag_1_medicine"),
+            renderer.get_sprite("ui/bag/bag_1_poke_balls"),
+            renderer.get_sprite("ui/bag/bag_1_battle_items"),
+            renderer.get_sprite("ui/bag/bag_1_tms"),
+            renderer.get_sprite("ui/bag/bag_1_berries"),
+            renderer.get_sprite("ui/bag/bag_1_other_items"),
+        },
+        ---The "<close>" text.
+        close_bag_txt = font:render_plain_text_shadowed(loc("screens.bag.close")),
+
         input_locked = true,
         ---The pouch in the bag that's currently active.
         section = 1,
@@ -124,17 +131,19 @@ function Bag.new (select_callback, close_callback)
     }, Bag)
 end
 
+---@param self Bag
 function Bag:open ()
     update_pocket_info(self)
     self.input_locked = false
 end
 
+---@param self Bag
 function Bag:draw ()
-    pocket_bgs[self.section].draw(Vec2.zero)
-    bag_sprites[self.section].draw(bag_pos)
+    self.pocket_bgs[self.section].draw(Vec2.zero)
+    self.bag_sprites[self.section].draw(BAG_POS)
 
-    local name_x = (164 - pocket_name_txts[self.section].width) / 2
-    pocket_name_txts[self.section].draw(Vec2.new(name_x, 140 + font.line_offset))
+    local name_x = (164 - self.pocket_name_txts[self.section].width) / 2
+    self.pocket_name_txts[self.section].draw(Vec2.new(name_x, 140 + self.font.line_offset))
 
     draw_item_list(self)
     draw_cursor(self)
@@ -142,6 +151,7 @@ function Bag:draw ()
     draw_desc_box(self)
 end
 
+---@param self Bag
 function Bag:handle_input ()
     if self.input_locked then return end
 
@@ -153,7 +163,7 @@ function Bag:handle_input ()
         if self.section > 1 then
             self.section = self.section - 1
         else
-            self.section = #pocket_bgs
+            self.section = #self.pocket_bgs
         end
 
         update_pocket_info(self)
@@ -162,7 +172,7 @@ function Bag:handle_input ()
 
         Audio.play_beep_short()
 
-        if self.section < #pocket_bgs then
+        if self.section < #self.pocket_bgs then
             self.section = self.section + 1
         else
             self.section = 1
@@ -206,6 +216,7 @@ function Bag:handle_input ()
     end
 end
 
+---@param self Bag
 function Bag:update_item_list ()
     build_section_list(self)
     update_item_info(self)
@@ -215,11 +226,13 @@ function Bag:update_item_list ()
     self.list_mgr.cursor = cursor
 end
 
+---@param self Bag
 function Bag:end_item_selection ()
     Script.wait_for_next_frame()
     self.is_item_selected = false
 end
 
+---@param self Bag
 update_pocket_info = function (self)
     -- Section 1 is favorites.
     if self.section == 1 then
@@ -232,12 +245,13 @@ update_pocket_info = function (self)
     self.list_mgr = ListMgr.new(#self.section_items, VISIBLE_ITEMS)
 end
 
+---@param self Bag
 update_item_info = function (self)
     if self.list_mgr.cursor <= #self.section_items then
         local item = self.section_items[self.list_mgr.cursor]
 
-        self.item_sprite = renderer:get_sprite("items/" .. item.item_id)
-        self.item_desc_sprite = font:render_plain_text_shadowed(
+        self.item_sprite = renderer.get_sprite("items/" .. item.item_id)
+        self.item_desc_sprite = self.font.render_plain_text_shadowed(
             loc("descriptions.items." .. item.item_id), DESC_SIZE.x
         )
         self.item_desc_sprite.set_color(DESC_TEXT_COLOR)
@@ -248,6 +262,7 @@ update_item_info = function (self)
     end
 end
 
+---@param self Bag
 build_section_list = function (self)
     self.section_items = G.inventory.get_items_at(self.section - 1)
     self.item_name_sprites = {}
@@ -256,15 +271,16 @@ build_section_list = function (self)
     for i, item in ipairs(self.section_items) do
         table.insert(
             self.item_name_sprites,
-            font:render_plain_text_shadowed(loc("names.items." .. item.item_id))
+            self.font.render_plain_text_shadowed(loc("names.items." .. item.item_id))
         )
         table.insert(
             self.item_amount_sprites,
-            font:render_plain_text_shadowed("x " .. item.amount)
+            self.font.render_plain_text_shadowed("x " .. item.amount)
         )
     end
 end
 
+---@param self Bag
 close_bag = function (self)
     if self.close_callback then
         self:close_callback()
@@ -272,6 +288,7 @@ close_bag = function (self)
 end
 
 -- #region Draw methods
+---@param self Bag
 draw_item_list = function (self)
     local first_index = self.list_mgr:get_first_visible_index()
 
@@ -287,13 +304,14 @@ draw_item_list = function (self)
                 AnchorPoint.top_right
             )
         elseif index == #self.section_items + 1 then
-            close_bag_txt.draw(
+            self.close_bag_txt.draw(
                 Vec2.new(ITEM_X, y_pos)
             )
         end
     end
 end
 
+---@param self Bag
 draw_cursor = function (self)
     local cursor_pos = self.list_mgr:get_cursor_screen_position()
 
@@ -303,6 +321,7 @@ draw_cursor = function (self)
     ))
 end
 
+---@param self Bag
 draw_arrows = function (self)
     local count = #self.section_items + 1
 
@@ -312,14 +331,15 @@ draw_arrows = function (self)
     local thumb_range = TRACK_HEIGHT - thumb_size
     local thumb_pos = (thumb_range / (count - 1)) * (self.list_mgr.cursor - 1)
 
-    slider_arrow_up.draw(arrow_up_pos)
-    slider_arrow_down.draw(arrow_down_pos)
+    slider_arrow_up.draw(ARROW_UP_POS)
+    slider_arrow_down.draw(ARROW_DOWN_POS)
     slider_thumb.draw(
         TRACK_TOP_LEFT + Vec2.new(0, thumb_pos),
         Vec2.new(TRACK_WIDTH, thumb_size)
     )
 end
 
+---@param self Bag
 draw_desc_box = function (self)
     if self.item_sprite then
         self.item_sprite.draw(ITEM_SPRITE_POS)

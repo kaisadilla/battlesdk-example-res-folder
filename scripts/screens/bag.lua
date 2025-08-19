@@ -9,9 +9,10 @@ local function close_bag (self)
     Screen.play_transition("transitions/fade", 0.25, true)
 end
 
-local bag = Bag.new(nil, close_bag)
+local bag
 
 function target:open ()
+    bag = Bag.new(nil, close_bag)
     bag:open()
 end
 

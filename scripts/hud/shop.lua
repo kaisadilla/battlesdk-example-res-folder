@@ -24,20 +24,21 @@ function start (welcome_msg, items)
     )
 
     if res == 1 then
-        buy(welcome_msg, items)
+        buy(items)
     elseif res == 2 then
-        sell(welcome_msg, items)
+        sell(items)
     else
+        Hud.message(loc("characters.default.shopkeeper.goodbye"))
         target.close()
     end
 end
 
-function buy (welcome_msg, items)
+function buy (items)
     Hud.script_element("hud/shop_buy", Object.new({ items = items }))
-    start(welcome_msg, items)
+    start(loc("characters.default.shopkeeper.more"), items)
 end
 
-function sell (welcome_msg, items)
+function sell (items)
     Hud.script_element("hud/shop_sell")
-    start(welcome_msg, items)
+    start(loc("characters.default.shopkeeper.more"), items)
 end

@@ -1,7 +1,7 @@
 Hud.script_element(
     "hud/shop",
     Object.new({
-        welcome_msg = loc("characters.default.shopkeeper"),
+        welcome_msg = loc("characters.default.shopkeeper.hello"),
         items = List.new(
             {
                 {

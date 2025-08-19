@@ -1,5 +1,7 @@
 [characters.default]
-shopkeeper = "Hello, how may I help you?"
+shopkeeper.hello = "Hello, how may I help you?"
+shopkeeper.more = "Is there anything else I may do for you?"
+shopkeeper.goodbye = "Please come again!"
 
 [characters.test-map-1]
 brawly.msg = "I love Fighing-type Pokémon. I think they are the bestest Pokémon out there. What's your opinion on the matter?"
