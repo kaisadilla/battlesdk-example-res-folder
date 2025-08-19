@@ -1,3 +1,4 @@
+---@class ScrollableListManager
 local List = {}
 List.__index = List
 
@@ -14,12 +15,12 @@ function List:move_cursor_up ()
     if self.cursor > 1 then
         self.cursor = self.cursor - 1
     else
-        self.cursor = self.count + 1
+        self.cursor = self.count
     end
 end
 
 function List:move_cursor_down ()
-    if self.cursor <= self.count then
+    if self.cursor < self.count then
         self.cursor = self.cursor + 1
     else
         self.cursor = 1
@@ -27,7 +28,7 @@ function List:move_cursor_down ()
 end
 
 function List:get_first_visible_index ()
-    local last_index = self.count + 1
+    local last_index = self.count
 
     -- If there aren't enough items to fill the screen, we start at 1.
     if last_index <= self.visible_items then return 1 end
@@ -46,7 +47,7 @@ function List:get_first_visible_index ()
 end
 
 function List:get_cursor_screen_position ()
-    local last_index = self.count + 1
+    local last_index = self.count
 
     -- All items fit on the screen, so the visual matches its logical position.
     if last_index <= self.visible_items then return self.cursor end

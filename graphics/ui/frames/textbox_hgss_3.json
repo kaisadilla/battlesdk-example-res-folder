@@ -1,0 +1,20 @@
+{
+    "type": "frame",
+    "x": [10, 11],
+    "y": [7, 8],
+    "x_mode": "stretch",
+    "y_mode": "stretch",
+    "center_mode": "stretch",
+    "text_padding": {
+        "right": 25,
+        "left": 14,
+        "top": 10,
+        "bottom": 10
+    },
+    "padding": {
+        "right": 19,
+        "left": 8,
+        "top": 5,
+        "bottom": 5
+    }
+}

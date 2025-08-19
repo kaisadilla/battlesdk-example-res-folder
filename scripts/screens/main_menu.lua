@@ -117,18 +117,28 @@ function target.handle_input ()
     if Controls.get_key_down(ActionKey.primary) then
         if options[cursor].id == "bag" then
             input_locked = true
+
             Audio.play_beep_short()
             Screen.play_transition("transitions/fade", 0.25, false)
             Script.wait(0.5)
             Screen.open_bag()
             Screen.play_transition("transitions/horizontal_wipe", 0.25, true)
+
             input_locked = false
         elseif options[cursor].id == "save" then
             Audio.play_beep_short()
             target.close()
             Screen.open_save_game()
         elseif options[cursor].id == "options" then
+            input_locked = true
+
             Audio.play_beep_short()
+            Screen.play_transition("transitions/fade", 0.25, false)
+            Script.wait(0.5)
+            Screen.open_options()
+            Screen.play_transition("transitions/fade", 0.25, true)
+
+            input_locked = false
         elseif options[cursor].id == "exit" then
             Audio.play_beep_short()
             target.close()

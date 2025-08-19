@@ -699,12 +699,23 @@ function Renderer.get_sprite (arg) end
 ---@return FrameSprite
 function Renderer.get_frame (arg) end
 
+---Returns the default frame for messages. This function can only be
+---called during gameplay.
+---@return FrameSprite
+function Renderer.get_default_message_frame () end
+
+---Returns the default frame for boxes. This function can only be called
+---during gameplay.
+---@return FrameSprite
+function Renderer.get_default_box_frame () end
+
 ---Returns the font with the name given, or null if no such font exists.
 ---@param name string The name of the font.
 ---@return Font
 function Renderer.get_font (name) end
 
----Returns the default text font of the game.
+---Returns the default text font of the game. This function can only be
+---called during gameplay.
 ---@return Font
 function Renderer.get_default_font () end
 
@@ -723,6 +734,11 @@ function Renderer.get_textbox (frame, font, pos, size, text) end
 ---@param choices unknown 
 ---@return ChoiceBox
 function Renderer.get_choice_box (frame, font, pos, anchor, choices) end
+
+---@param width number 
+---@param value number 
+---@return Scrollbar
+function Renderer.get_scrollbar (width, value) end
 
 ---@param script_name string 
 ---@return ScriptElement
@@ -773,8 +789,8 @@ function Screen.open_bag () end
 ---Opens the save game screen.
 function Screen.open_save_game () end
 
----Opens the shop screen, if it exists.
-function Screen.open_shop () end
+---Opens the options screen.
+function Screen.open_options () end
 
 ---Plays a transition on screen as described.
 ---@param script_name string The name of the transition's script.
@@ -855,6 +871,47 @@ function ScriptHudElement.close () end
 ---@return string
 function ScriptHudElement.str () end
 -- #endregion ScriptHudElement
+
+-- #region Scrollbar
+---@class Scrollbar
+---@field width number
+---@field value number
+Scrollbar = {}
+
+---@return number
+function Scrollbar.get_width () end
+
+---@return number
+function Scrollbar.get_value () end
+
+---@param value number 
+function Scrollbar.set_value (value) end
+
+---@param position Vec2 
+function Scrollbar.draw (position) end
+
+---@return string
+function Scrollbar.to_string () end
+
+---@return string
+function Scrollbar.str () end
+-- #endregion Scrollbar
+
+-- #region Settings
+---@class Settings
+---@field default_text_color Color
+---@field default_text_shadow_color Color
+Settings = {}
+
+---@return Color
+function Settings.get_default_text_color () end
+
+---@return Color
+function Settings.get_default_text_shadow_color () end
+
+---@return string
+function Settings.to_string () end
+-- #endregion Settings
 
 -- #region Sprite
 ---@class Sprite

@@ -222,7 +222,7 @@ function Bag:update_item_list ()
     update_item_info(self)
 
     local cursor = self.list_mgr.cursor
-    self.list_mgr = ListMgr.new(#self.section_items, VISIBLE_ITEMS)
+    self.list_mgr = ListMgr.new(#self.section_items + 1, VISIBLE_ITEMS)
     self.list_mgr.cursor = cursor
 end
 
@@ -242,7 +242,7 @@ update_pocket_info = function (self)
     end
 
     update_item_info(self)
-    self.list_mgr = ListMgr.new(#self.section_items, VISIBLE_ITEMS)
+    self.list_mgr = ListMgr.new(#self.section_items + 1, VISIBLE_ITEMS)
 end
 
 ---@param self Bag
